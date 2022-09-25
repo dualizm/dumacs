@@ -1,4 +1,5 @@
-<center> nimacs </center>
+# nimacs
+
 ![](img/nimacs.png)
 ### My emacs config 
 
