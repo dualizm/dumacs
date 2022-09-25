@@ -1,5 +1,5 @@
 # nimacs
-My emacs config
+## My emacs config
 
 ### Plugins
-## evil
+- evil
