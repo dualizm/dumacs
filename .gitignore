@@ -5,3 +5,5 @@
 lib-private-*.el
 init-private-*.el
 config-private-*.el
+elpa
+eln-cache
