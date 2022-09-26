@@ -24,7 +24,7 @@
 ;;;| font |
 ;;;|---------------------------------------------------------|
 (set-frame-font 
-  "-CTDB-FuraCode Nerd Font-normal-normal-normal-*-*-*-*-*-d-0-iso10646-1"
+  "-CTDB-FiraCode Nerd Font-normal-normal-normal-*-*-*-*-*-d-0-iso10646-1"
   nil t)
 (set-face-attribute 'default nil :height 110)
 ;;;|---------------------------------------------------------|

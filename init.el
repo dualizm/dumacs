@@ -16,73 +16,35 @@
 ;;;|---------------------------------------------------------|
 ;;;| configuration files |
 ;;;|---------------------------------------------------------|
-(load-config  
+(load-configs
   '(
     ;; general settings 
-    "settings"
+    settings
 
     ;; mappings
-    "mappings" 
+    mappings
 
     ;; theme settings
-    "themes"
+    themes
 ))
 ;;;|---------------------------------------------------------|
 
 ;;;|---------------------------------------------------------|
 ;;;| plugin files |
 ;;;|---------------------------------------------------------|
-(load-plugin  
+(load-plugins
   '(
-    "package" ; package (use-package) config
-    "evil"    ; vim like hjkl
+    package       ; package (use-package) config
+    evil          ; vim like hjkl
+    pulse         ; cool bean
+    smooth-scroll ; cool scroll
+  ; projectlite   ; project interaction library
 )) 
 ;;;|---------------------------------------------------------|
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ;; Project Interaction Library for Emacs  
-    ; (load-plugin "projectlite/init.el")
-; ; Cool scroll
-; (use-package smooth-scroll
-;   :ensure t)
-; (smooth-scroll-mode)
-; ; Cool bean
-; (use-package pulse
-;   ;; Highlight cursor postion after movement
-;   :ensure t
-;   :defer t
-;   :init (defun pulse-line (&rest _)
-;           (pulse-momentary-highlight-one-line (point)))
-;   (dolist (command '(other-window windmove-do-window-select mouse-set-point mouse-select-window))
-;     (advice-add command :after #'pulse-line)))
-; ; Support CL
-; (use-package slime
-;   :ensure t)
-; (setq inferior-lisp-program "sbcl")
-
-
-
-;;; |
-;;; | Old
-;;; V
+;;;|
+;;;| Old
+;;;V
 
 ; ;;; [SETTINGS]
 ; ;;==============================================
@@ -98,11 +60,4 @@
 ; ;; [BS]
 ; (setq bs-configurations
 ;       '(("files" "^\\*scratch\\*" nil nil bs-visits-non-file bs-sort-buffer-interns-are-last)))
-;
-; (setq redisplay-dont-pause t
-;   scroll-margin 1
-;   scroll-step 1
-;   scroll-conservatively 10000
-;   scroll-preserve-screen-position 1)
 ; ;;==============================================
-;

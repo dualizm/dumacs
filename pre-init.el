@@ -14,11 +14,18 @@
 ;;;|---------------------------------------------------------|
 ;;;| module loading functions |
 ;;;|---------------------------------------------------------|
-(defun load-config (dir-names) 
+(defun load-configs (dir-names) 
   (dolist (dir-name dir-names)
-    (load (concat "~/.emacs.d/config/" dir-name "/init.el"))))
+    (load 
+      (concat "~/.emacs.d/config/" 
+        (convert-to-string dir-name) "/init.el"))))
 
-(defun load-plugin (dir-names)
+(defun load-plugins (dir-names)
   (dolist (dir-name dir-names)
-    (load (concat "~/.emacs.d/config/plugin/" dir-name "/init.el"))))
+    (load 
+      (concat "~/.emacs.d/config/plugin/" 
+        (convert-to-string dir-name) "/init.el"))))
+
+(defun convert-to-string (name)
+  (format "%s" name))
 ;;;|---------------------------------------------------------|
