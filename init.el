@@ -35,7 +35,6 @@
 (load-plugins
   '(
     package       ; package (use-package) config
-    evil          ; vim like hjkl
     pulse         ; cool bean
     smooth-scroll ; cool scroll
   ; projectlite   ; project interaction library
