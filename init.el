@@ -18,45 +18,22 @@
 ;;;|---------------------------------------------------------|
 (load-configs
   '(
-    ;; general settings 
-    settings
-
-    ;; mappings
-    mappings
-
-    ;; theme settings
-    themes
+    settings ; general settings 
+    binds ; mappings
+    themes ; theme settings
+    plugins ; plugins
 ))
 ;;;|---------------------------------------------------------|
 
-;;;|---------------------------------------------------------|
-;;;| plugin files |
-;;;|---------------------------------------------------------|
-(load-plugins
-  '(
-    package       ; package (use-package) config
-    pulse         ; cool bean
-    smooth-scroll ; cool scroll
-  ; projectlite   ; project interaction library
-)) 
-;;;|---------------------------------------------------------|
-
-;;;|
-;;;| Old
-;;;V
-
-; ;;; [SETTINGS]
-; ;;==============================================
-;
-; ;; [LINUM]
-; (global-linum-mode t)
-;
-; ;; [IDO]
-; (setq ido-enable-flex-matching t)
-; (setq ido-everywhere t)
-; (ido-mode t)
-;
-; ;; [BS]
-; (setq bs-configurations
-;       '(("files" "^\\*scratch\\*" nil nil bs-visits-non-file bs-sort-buffer-interns-are-last)))
-; ;;==============================================
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(good-scroll use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

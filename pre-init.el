@@ -18,14 +18,20 @@
   (dolist (dir-name dir-names)
     (load 
       (concat "~/.emacs.d/config/" 
-        (convert-to-string dir-name) "/init.el"))))
+        (to-string dir-name) "/init.el"))))
 
-(defun load-plugins (dir-names)
+(defun load-subdir-config (dir-names subdir)
   (dolist (dir-name dir-names)
     (load 
-      (concat "~/.emacs.d/config/plugin/" 
-        (convert-to-string dir-name) "/init.el"))))
+      (concat "~/.emacs.d/config/" subdir "/" 
+        (to-string dir-name) "/init.el"))))
 
-(defun convert-to-string (name)
+(defun load-plugins (dir-names)
+  (load-subdir-config dir-names "plugins"))
+
+(defun load-binds (dir-names)
+  (load-subdir-config dir-names "binds"))
+
+(defun to-string (name)
   (format "%s" name))
 ;;;|---------------------------------------------------------|

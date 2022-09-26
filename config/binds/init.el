@@ -1,19 +1,30 @@
+;;;;|--------------------------------------------------------|
+;;;;| AUTHORS notidman <ognieff@yandex.ru>
+;;;;|
+;;;;| @URL https://github.com/notidman/nimacs
+;;;;|
+;;;;| @PROJECT-NAME nimacs
+;;;;|
+;;;;| @DATE-START 29-09-22
+;;;;|
+;;;;| @BRIEF contains bindings for nimacs
+;;;;|
+;;;;|--------------------------------------------------------|
+
+;;;|---------------------------------------------------------|
+;;;| binds |
+;;;|---------------------------------------------------------|
+(load-binds
+  '(
+    move
+))
+;;;|---------------------------------------------------------|
 
 ; ;;; [BIND'S]
 ; ;;==============================================
 ; (global-set-key (kbd "<f1>") 'bs-show)
 ; (global-set-key (kbd "<f2>") 'save-buffer)
 ; ;(global-set-key (kbd "M-e") 'RET)
-;
-; ;; [MOVE]
-; ;(global-set-key (kbd "M-j") 'backward-char)
-; ;(global-set-key (kbd "M-i") 'previous-line)
-; ;(global-set-key (kbd "M-k") 'next-line)
-; ;(global-set-key (kbd "M-l") 'forward-char)
-; ;(global-set-key (kbd "M-L") 'move-end-of-line)
-; ;(global-set-key (kbd "M-J") 'move-beginning-of-line)
-; ;(global-set-key (kbd "M-I") 'scroll-down-command)
-; ;(global-set-key (kbd "M-K") 'scroll-up-command)
 ;
 ; ;; [FILE<EDIT]
 ; ;(global-set-key (kbd "M-u") 'undo)
