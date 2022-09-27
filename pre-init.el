@@ -17,7 +17,7 @@
 (defun load-configs (dir-names) 
   (dolist (dir-name dir-names)
     (load 
-      (concat "~/.emacs.d/config/" 
+      (concat "~/.emacs.d/config/" subdir
         (to-string dir-name) "/init.el"))))
 
 (defun load-subdir-config (dir-names subdir)
