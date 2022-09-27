@@ -18,6 +18,7 @@
 (global-set-key (kbd "M-k") 'previous-line)
 (global-set-key (kbd "M-j") 'next-line)
 (global-set-key (kbd "M-l") 'forward-char)
+
 (global-set-key (kbd "M-L") 'move-end-of-line)
 (global-set-key (kbd "M-H") 'move-beginning-of-line)
 (global-set-key (kbd "M-K") 'scroll-down-command)
