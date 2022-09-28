@@ -4,4 +4,3 @@
 ### My emacs config 
 
 ## Plugins
-- evil
