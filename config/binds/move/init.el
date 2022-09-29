@@ -23,5 +23,13 @@
 (global-set-key (kbd "M-H") 'move-beginning-of-line)
 (global-set-key (kbd "M-K") 'scroll-down-command)
 (global-set-key (kbd "M-J") 'scroll-up-command)
+
+(global-set-key (kbd "M-f") 'forward-word)
+(global-set-key (kbd "M-b") 'backward-word)
+
+(global-set-key (kbd "M-<") 'beginning-of-buffer)
+(global-set-key (kbd "M->") 'end-of-buffer)
+
+(global-set-key (kbd "M-p") 'goto-line)
 ;;;|---------------------------------------------------------|
 

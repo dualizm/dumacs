@@ -34,4 +34,7 @@
 
 (defun to-string (name)
   (format "%s" name))
+
+; (defmacro create-bind (key-comb function)
+;   (global-set-key (kbd key-comb) function))
 ;;;|---------------------------------------------------------|
