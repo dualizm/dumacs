@@ -7,19 +7,15 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF plugin config
+;;;;| @BRIEF settings config
 ;;;;|
 ;;;;|--------------------------------------------------------|
 
 ;;;|---------------------------------------------------------|
-;;;| (pulse)
+;;;| (font)
 ;;;|---------------------------------------------------------|
-(use-package pulse
-  ;; Highlight cursor postion after movement
-  :defer t
-  :init 
-  (defun pulse-line (&rest _)
-          (pulse-momentary-highlight-one-line (point)))
-  (dolist (command '(other-window windmove-do-window-select mouse-set-point mouse-select-window))
-    (advice-add command :after #'pulse-line)))
+(set-frame-font 
+  "-CTDB-FiraCode Nerd Font-normal-normal-normal-*-*-*-*-*-d-0-iso10646-1"
+  nil t)
+(set-face-attribute 'default nil :height 110)
 ;;;|---------------------------------------------------------|

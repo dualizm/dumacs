@@ -12,28 +12,31 @@
 ;;;;|--------------------------------------------------------|
 
 ;;;|---------------------------------------------------------|
-;;;| module loading functions |
+;;;| (module loading functions)
 ;;;|---------------------------------------------------------|
-(defun load-configs (dir-names) 
+(cl-defun load-configs (dir-names &key (subdir "")) 
   (dolist (dir-name dir-names)
     (load 
-      (concat "~/.emacs.d/config/"
-        (to-string dir-name) "/init.el"))))
-
-(defun load-subdir-config (dir-names subdir)
-  (dolist (dir-name dir-names)
-    (load 
-      (concat "~/.emacs.d/config/" subdir "/" 
+      (concat "~/.emacs.d/config/" subdir
         (to-string dir-name) "/init.el"))))
 
 (defun load-plugins (dir-names)
-  (load-subdir-config dir-names "plugins"))
+  (load-configs dir-names :subdir "plugins/"))
 
 (defun load-binds (dir-names)
-  (load-subdir-config dir-names "binds"))
+  (load-configs dir-names :subdir "binds/"))
+
+(defun load-settings (dir-names)
+  (load-configs dir-names :subdir "settings/"))
 
 (defun to-string (name)
   (format "%s" name))
+
+; (defun set-binds (keys funs)
+;   (loop for )
+
+(defun set-bind (key-comb fun)
+  (global-set-key (kbd key-comb) fun))
 
 ; (defmacro create-bind (key-comb function)
 ;   (global-set-key (kbd key-comb) function))

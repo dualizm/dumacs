@@ -14,7 +14,7 @@
 (load "~/.emacs.d/pre-init.el") ; contains configuration functions
 
 ;;;|---------------------------------------------------------|
-;;;| configuration files |
+;;;| (configuration files)
 ;;;|---------------------------------------------------------|
 (load-configs
   '(
