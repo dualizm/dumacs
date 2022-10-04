@@ -7,3 +7,4 @@ init-private-*.el
 config-private-*.el
 elpa
 eln-cache
+auto-save-list
