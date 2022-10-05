@@ -1,6 +1,6 @@
 # nimacs
 
-![](img/nimacs_v3r.svg)
+![](img/nimacs_v4r.svg)
 ### My emacs config 
 
 ## Plugins
