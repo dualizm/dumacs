@@ -32,11 +32,10 @@
 (defun to-string (name)
   (format "%s" name))
 
-; (defun set-binds (keys funs)
-;   (loop for )
-
 (defun set-bind (key-comb fun)
   (global-set-key (kbd key-comb) fun))
+
+; (defun set-binds (&rest key-fun))
 
 ; (defmacro create-bind (key-comb function)
 ;   (global-set-key (kbd key-comb) function))
