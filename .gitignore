@@ -8,3 +8,5 @@ config-private-*.el
 elpa
 eln-cache
 auto-save-list
+auto-saves/*
+backup-files/*
