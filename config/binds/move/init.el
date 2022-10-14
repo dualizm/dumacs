@@ -14,22 +14,20 @@
 ;;;|---------------------------------------------------------|
 ;;;| (move)
 ;;;|---------------------------------------------------------|
-(set-bind "M-h" 'backward-char)
-(set-bind "M-k" 'previous-line)
-(set-bind "M-j" 'next-line)
-(set-bind "M-l" 'forward-char)
-
-(set-bind "M-L" 'move-end-of-line)
-(set-bind "M-H" 'move-beginning-of-line)
-(set-bind "M-K" 'scroll-down-command)
-(set-bind "M-J" 'scroll-up-command)
-
-(set-bind "M-f" 'forward-word)
-(set-bind "M-b" 'backward-word)
-
-(set-bind "M-<" 'beginning-of-buffer)
-(set-bind "M->" 'end-of-buffer)
-
-(set-bind "M-p" 'goto-line)
+(set-gbinds '(
+   "M-h"  backward-char 
+   "M-k"  previous-line 
+   "M-j"  next-line 
+   "M-l"  forward-char 
+   "M-L"  move-end-of-line 
+   "M-H"  move-beginning-of-line 
+   "M-K"  scroll-down-command 
+   "M-J"  scroll-up-command 
+   "M-f"  forward-word 
+   "M-b"  backward-word 
+   "M-<"  beginning-of-buffer 
+   "M->"  end-of-buffer 
+   "M-p"  goto-line 
+))
 ;;;|---------------------------------------------------------|
 

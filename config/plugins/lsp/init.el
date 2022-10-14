@@ -1,5 +1,5 @@
 ;;;;|--------------------------------------------------------|
-;;;;| AUTHORS notidman <ognieff@yandex.ru>
+;;;;| @AUTHORS notidman <ognieff@yandex.ru>
 ;;;;|
 ;;;;| @URL https://github.com/notidman/nimacs
 ;;;;|
@@ -7,20 +7,12 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF contains bindings for nimacs
+;;;;| @BRIEF plugin config
 ;;;;|
 ;;;;|--------------------------------------------------------|
 
 ;;;|---------------------------------------------------------|
-;;;| (edit-text)
+;;;| (lsp)
 ;;;|---------------------------------------------------------|
-(set-gbinds '(
-  "C-x c" delete-char
-  "C-x w" kill-word
-  "C-x l" kill-line
-  "C-x s" kill-sentence
-  "C-x h" delete-horizontal-space
-  "C-q"     quoted-insert
-  "C-x p"   fill-paragraph
-))
+(use-package lsp-mode)
 ;;;|---------------------------------------------------------|

@@ -14,11 +14,13 @@
 ;;;|---------------------------------------------------------|
 ;;;| (plugins)
 ;;;|---------------------------------------------------------|
-(load-plugins
-  '(
+(load-plugins '(
     package       ; package (use-package) config
     pulse         ; cool bean
     smooth-scroll ; cool scroll
+    slime
+    evil
+    lsp
   ; projectlite   ; project interaction library
 )) 
 ;;;|---------------------------------------------------------|

@@ -11,16 +11,16 @@
 ;;;;|
 ;;;;|--------------------------------------------------------|
 
-(load "~/.emacs.d/pre-init.el") ; contains configuration functions
+; contains configuration functions
+(load "~/.emacs.d/nimacs-api.el") 
 
 ;;;|---------------------------------------------------------|
 ;;;| (configuration files)
 ;;;|---------------------------------------------------------|
-(load-configs
-  '(
+(load-configs '(
     settings ; general settings 
-    binds ; mappings
-    themes ; theme settings
-    plugins ; plugins
+    plugins  ; plugins
+    themes   ; themes settings
+    binds    ; nimacs layout
 ))
 ;;;|---------------------------------------------------------|

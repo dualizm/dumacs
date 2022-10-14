@@ -14,5 +14,8 @@
 ;;;|---------------------------------------------------------|
 ;;;| (theme config_
 ;;;|---------------------------------------------------------|
-(load-theme 'modus-vivendi t)
+; (load-theme 'modus-vivendi t)
+(use-package cherry-blossom-theme
+    :config
+      (load-theme 'cherry-blossom t))
 ;;;|---------------------------------------------------------|

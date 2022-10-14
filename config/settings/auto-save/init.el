@@ -1,5 +1,5 @@
 ;;;;|--------------------------------------------------------|
-;;;;| AUTHORS notidman <ognieff@yandex.ru>
+;;;;| @AUTHORS notidman <ognieff@yandex.ru>
 ;;;;|
 ;;;;| @URL https://github.com/notidman/nimacs
 ;;;;|
@@ -7,20 +7,15 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF contains bindings for nimacs
+;;;;| @BRIEF settings config
 ;;;;|
 ;;;;|--------------------------------------------------------|
 
 ;;;|---------------------------------------------------------|
-;;;| (edit-text)
+;;;| (auto-save)
 ;;;|---------------------------------------------------------|
-(set-gbinds '(
-  "C-x c" delete-char
-  "C-x w" kill-word
-  "C-x l" kill-line
-  "C-x s" kill-sentence
-  "C-x h" delete-horizontal-space
-  "C-q"     quoted-insert
-  "C-x p"   fill-paragraph
-))
+(setq backup-directory-alist
+      `((".*" . "~/.emacs.d/backup-files/")))
+(setq auto-save-file-name-transforms
+      `((".*" "~/.emacs.d/auto-saves/" t)))
 ;;;|---------------------------------------------------------|
