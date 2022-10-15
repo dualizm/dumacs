@@ -15,12 +15,13 @@
 ;;;| (plugins)
 ;;;|---------------------------------------------------------|
 (load-plugins '(
-    package       ; package (use-package) config
+    use-package   ; improvements require
     pulse         ; cool bean
     smooth-scroll ; cool scroll
-    slime
-    evil
-    lsp
+    sly           ; old -> slime
+    evil          ; hjkl
+    lsp           ; auto complete
+    linum         ; line numbers
   ; projectlite   ; project interaction library
 )) 
 ;;;|---------------------------------------------------------|
@@ -31,10 +32,6 @@
 
 ; ;;; [SETTINGS]
 ; ;;==============================================
-;
-; ;; [LINUM]
-; (global-linum-mode t)
-;
 ; ;; [IDO]
 ; (setq ido-enable-flex-matching t)
 ; (setq ido-everywhere t)

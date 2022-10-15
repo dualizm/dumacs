@@ -8,10 +8,15 @@ exec ros -Q -- $0 "$@"
   #+quicklisp(ql:quickload '() :silent t)
   )
 
-(defpackage :ros.script.upd.3873760595
+(defpackage :ros.script.upd.3874830201
   (:use :cl))
-(in-package :ros.script.upd.3873760595)
+(in-package :ros.script.upd.3874830201)
+
+(defun upd ()
+  (uiop:run-program "git add ." :output :string)
+  (uiop:run-program "git commit -m \"[upd]\"" :output :string)
+  (uiop:run-program "git push" :output :string))
 
 (defun main (&rest argv)
-  (declare (ignorable argv)))
-;;; vim: set ft=lisp lisp:
+  (declare (ignorable argv))
+  (upd))

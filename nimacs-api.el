@@ -14,19 +14,23 @@
 ;;;|---------------------------------------------------------|
 ;;;| (module loading functions)
 ;;;|---------------------------------------------------------|
-(cl-defun load-configs (dir-names &key (subdir "")) 
+(defun load-configs (dir-names &optional subdir) 
   (dolist (dir-name dir-names)
     (load (concat "~/.emacs.d/config/" subdir
           (to-string dir-name) "/init.el"))))
 
 (defun load-plugins (dir-names)
-  (load-configs dir-names :subdir "plugins/"))
+  (load-configs dir-names "plugins/"))
 
 (defun load-binds (dir-names)
-  (load-configs dir-names :subdir "binds/"))
+  (load-configs dir-names "binds/"))
 
 (defun load-settings (dir-names)
-  (load-configs dir-names :subdir "settings/"))
+  (load-configs dir-names "settings/"))
+
+(defun load-additions (plug-name dir-names)
+    (load-configs dir-names
+      (concat "plugins/" (to-string plug-name) "/additions/")))
 
 (defun to-string (name)
   (format "%s" name))

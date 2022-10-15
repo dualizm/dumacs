@@ -7,21 +7,14 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF contains loadable modules for config.
+;;;;| @BRIEF plugin config
 ;;;;|
 ;;;;|--------------------------------------------------------|
 
-; contains configuration functions
-(load "~/.emacs.d/nimacs-api.el") 
-
 ;;;|---------------------------------------------------------|
-;;;| (configuration files)
+;;;| (sly)
 ;;;|---------------------------------------------------------|
-(load-configs '(
-    settings ; general settings 
-    package  ; package config
-    themes   ; themes settings
-    plugins  ; plugins
-    binds    ; nimacs layout
-))
+(use-package sly
+    :config
+      (setq inferior-lisp-program "sbcl"))
 ;;;|---------------------------------------------------------|
