@@ -23,6 +23,7 @@
     lsp           ; auto complete
     linum         ; line numbers
   ; projectlite   ; project interaction library
+
 )) 
 ;;;|---------------------------------------------------------|
 
