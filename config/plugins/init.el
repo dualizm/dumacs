@@ -15,16 +15,17 @@
 ;;;| (plugins)
 ;;;|---------------------------------------------------------|
 (load-plugins '(
-    use-package   ; improvements require
-    pulse         ; cool bean
-    smooth-scroll ; cool scroll
-    sly           ; old -> slime
-    evil          ; hjkl
-    lsp           ; auto complete
-    linum         ; line numbers
-    rainbow-mode  ; hightlight #d34474
-  ; projectlite   ; project interaction library
-
+    use-package        ; improvements require
+    pulse              ; cool bean
+    smooth-scroll      ; cool scroll
+    sly                ; old -> slime
+    evil               ; hjkl
+    lsp                ; auto complete
+    linum              ; line numbers
+    rainbow-mode       ; hightlight #d34474
+    rainbow-delimiters ; (((((((()))))))) many colors
+    company            ; auto compl[ete]
+                       ; projectlite   ; project interaction library
 )) 
 ;;;|---------------------------------------------------------|
 
