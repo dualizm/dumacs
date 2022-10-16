@@ -1,0 +1,41 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/" . "4/")
+ ("/home/nim/dev/git_projects/cl-learn/" . "practical-common-lisp/")
+ ("/home/nim/dev/git_projects/" . "cl-learn/")
+ ("/home/nim/dev/" . "git_projects/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/nim/dev/git_projects/cl-learn/practical-common-lisp/4/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "main.lisp"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/4/" (25420 6275 318068 70000) "../" "./" "main.lisp")
+
+ ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/" (25363 61377 970304 125000) "../" "2/" "3/" "./" "4/")
+
+ ("/home/nim/dev/git_projects/cl-learn/" (25411 39084 675755 451000) "../" "cl-buff/" ".gitignore" ".git/" "practical-common-lisp/" "./" "README.md" ".lsp/" "LICENSE" ".clj-kondo/" "BOOKS.html")
+
+ ("/home/nim/dev/git_projects/" (25411 21132 824832 626000) "../" "Mutasi/" "Zinc/" "cl-learn/" "RockPaperScissors/" "temp_git_project/" "MGCC/" "console_minesweeper/" "libpdt/" "DeclarativeC/" "Assembler/" "env/" "LearnOOP/" "Clickus/" "Haskell-TR/" "git_push_all.sh" "CardHub/" "ShowPrim/" "del/" "LuaProg/" "TrainOnCpp/" "./" "lectures/" "TrainOnC/" "Rargs/" "client_server/" "loner/" "SpectrumSerivce/" "MyStringCpp/" "DesignPatterns/" "temporary_files/" "VKR/" "HuntingWorld/" "Megamovement/" "christmas_tree_2022/" "CREATE_BUILD_C/" "pac/" "nvim_conf/")
+
+ ("/home/nim/dev/" (25402 17816 948416 382000) "python/" "../" "java/" "old-prg/" "clojure/" "other-reps/" "lisp/" "c-extreme/" "for-dev/" "c-sharp/" "rust/" "c/" "./" "cl/" "cxx/" "git_projects/" "experements/" "haskell/" "lua/" "crelex-lang/")
+
+ ("/home/" (25276 39682 757280 444000) "../" "nim/" "./" ".keep")
+
+ ("/home/nim/books-read/" (25194 52220 133902 993000) "Lisp1.pdf" "bookmarks.txt" "../" "Элементарный учебник физики [2001] Ландсберг/" "A Tour of C++ Second Edition [2018] Stroustrup B. .pdf" "Элементарный учебник физики в 3т. Т.1 Ландсберг [2010].pdf" "Ландсберг Г.С. - Элементарный учебник физики (том 1) - 2001.djvu" "Элементарный_учебник_физики_—_Ландсберг_2001.zip" "Ландсберг Г.С. - Элементарный учебник физики (том 3) - 2001.djvu" "Vandevurd_D__Dzhosattis_N__Gregor_D_-_Shablony_C__Spravochnik_razrabotchika_2-e_izdanie_-_2018.pdf" "./" "Fizika_7klass_Bozhinova.pdf" "Lisp2.pdf" "ohaskell.pdf" "Язык программирования С++. Краткий курс [2019] Страуструп Б..pdf" "Ландсберг Г.С. - Элементарный учебник физики (том 2) - 2001.djvu" "Элементарный учебник физики в 3т. Т.2 Ландсберг [2001].pdf" "Язык_программирования_С++_Краткий_курс_2_е_изд_2019Ru+En_Страуструп(1).zip" "Чистая архитектура [2021] Роберт Мартин.pdf")
+
+ ("/home/nim/" (25419 60945 384184 200000) ".vim/" "docs/" "temp/" ".factorio/" ".wine/" "../" ".aqemu/" ".mozilla/" ".cups/" "krita-draw/" ".renpy/" ".bash_profile" "downloads/" ".lyrics/" ".work.swp" ".gtkrc.tmp-0" ".m2/" ".w3m/" ".slime/" ".config/" ".vimrc" "pic/" "dev/" ".cache/" "TODO.org" ".gnupg/" ".gtkrc-2.0.bak" ".urxvt/" ".npm/" "gif/" "app/" ".daylist" ".lesshst" "notebooks/" ".designer/" "Desktop/" ".stack/" ".java/" ".wget-hsts" ".tmux.conf" ".sbcl_history" "mnt/" "ardour-projects/" "games/" ".bash_history" "poems/" ".spacemacs.env" ".spacemacs" ".nvidia-settings-rc" "music/" ".ncmpcpp/" ".sane/" ".steampath" ".fltk/" ".ssh/" ".ghc/" ".xsel.log" ".xinitrc" ".vscode-oss/" ".gitconfig" ".apvlvinfo" ".Xauthority" ".steam/" "books-read/" "notes/" ".cabal/" ".local/" ".roswell/" "flash/" ".steampid" "./" ".minecraft/" "inkscape-draw/" ".sly-mrepl-history" ".mupdf.history" ".viminfo" "books/" ".themes/" ".conkyrc" ".dia/" ".lein/" ".dbus/" ".pki/" "movies/" "screenshots/" ".NERDTreeBookmarks" ".cargo/" "trash/" ".emacs.d/" ".bash_logout" ".slime_paste" ".slime-history.eld" ".bashrc" ".fehbg" ".zcompdump" "scripts/" ".gtkrc-2.0" ".zshrc" "iso/" ".configb/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -7,26 +7,18 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF contains loadable modules for config.
+;;;;| @BRIEF plugin config
 ;;;;|
 ;;;;|--------------------------------------------------------|
 
-; contains configuration functions
-(load "~/.emacs.d/nimacs-api.el") 
-
 ;;;|---------------------------------------------------------|
-;;;| (configuration files)
+;;;| (bs)
 ;;;|---------------------------------------------------------|
-(load-configs '(
-    settings ; general settings 
-    package  ; package config
-    themes   ; themes settings
-    plugins  ; plugins
-    binds    ; nimacs layout
-))
+(use-package bs
+  :init
+  (setq bs-configurations
+        '(("files" "^\\*scratch\\*"
+           nil nil
+           bs-visits-non-file 
+           bs-sort-buffer-interns-are-last))))
 ;;;|---------------------------------------------------------|
-
-; To add
-;; ElectricPair
-;; puni
-;; 

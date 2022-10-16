@@ -7,26 +7,17 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF contains loadable modules for config.
+;;;;| @BRIEF plugin config
 ;;;;|
 ;;;;|--------------------------------------------------------|
 
-; contains configuration functions
-(load "~/.emacs.d/nimacs-api.el") 
-
 ;;;|---------------------------------------------------------|
-;;;| (configuration files)
+;;;| (ido)
 ;;;|---------------------------------------------------------|
-(load-configs '(
-    settings ; general settings 
-    package  ; package config
-    themes   ; themes settings
-    plugins  ; plugins
-    binds    ; nimacs layout
-))
+(use-package ido
+  :init
+    (ido-mode t)
+  :config
+    (setq ido-enable-flex-matching t)
+    (setq ido-everywhere t))
 ;;;|---------------------------------------------------------|
-
-; To add
-;; ElectricPair
-;; puni
-;; 
