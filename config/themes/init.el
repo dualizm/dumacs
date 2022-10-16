@@ -18,4 +18,5 @@
 (use-package cherry-blossom-theme
     :config
       (load-theme 'cherry-blossom t))
+(set-face-background 'mode-line "black")
 ;;;|---------------------------------------------------------|

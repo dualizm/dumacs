@@ -9,4 +9,4 @@ elpa
 eln-cache
 auto-save-list
 auto-saves/*
-backup-files/*
+backups/*

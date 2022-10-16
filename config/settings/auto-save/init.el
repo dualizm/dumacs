@@ -15,7 +15,7 @@
 ;;;| (auto-save)
 ;;;|---------------------------------------------------------|
 (setq backup-directory-alist
-      `((".*" . "~/.emacs.d/backup-files/")))
+      `((".*" . "~/.emacs.d/backups/")))
 (setq auto-save-file-name-transforms
       `((".*" "~/.emacs.d/auto-saves/" t)))
 ;;;|---------------------------------------------------------|

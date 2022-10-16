@@ -8,7 +8,7 @@
    version="1.1"
    id="svg8124"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="nimacs-v6.1r.svg"
+   sodipodi:docname="nimacs-v6.2r.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@
      inkscape:snap-bbox="false"
      inkscape:zoom="2"
      inkscape:cx="174"
-     inkscape:cy="150.75"
+     inkscape:cy="190.5"
      inkscape:window-width="1904"
      inkscape:window-height="1022"
      inkscape:window-x="6"
@@ -148,7 +148,7 @@
        ry="1.6059526" />
     <path
        sodipodi:type="star"
-       style="fill:#662aaa;fill-opacity:1;stroke:#ffffff;stroke-width:3.96163028;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:31.6930422,31.6930422;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       style="fill:#d34474;fill-opacity:1;stroke:#ffffff;stroke-width:3.96163028;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:31.6930422, 31.6930422;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
        id="path12792"
        inkscape:flatsided="false"
        sodipodi:sides="4"

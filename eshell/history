@@ -1,0 +1,4 @@
+killall polybar
+polybar
+date --help
+man date

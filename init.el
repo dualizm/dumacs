@@ -25,3 +25,9 @@
     binds    ; nimacs layout
 ))
 ;;;|---------------------------------------------------------|
+
+; To add
+;; ElectricPair
+;; puni
+;; rainbow-mode
+;; 
