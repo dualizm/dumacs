@@ -1,6 +1,6 @@
-# nimacs
+# Nimacs ☥
 
-![](img/nimacs.svg)
-### My emacs config 
+<p align="center"><img src="img/nimacs.svg" alt="Nimacs"/></p>
 
-## Plugins
+- - -
+** Quick Start **

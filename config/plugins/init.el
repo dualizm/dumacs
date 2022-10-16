@@ -22,6 +22,7 @@
     evil          ; hjkl
     lsp           ; auto complete
     linum         ; line numbers
+    rainbow-mode  ; hightlight #d34474
   ; projectlite   ; project interaction library
 
 )) 
