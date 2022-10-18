@@ -7,14 +7,16 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF plugin config
+;;;;| @BRIEF settings config
 ;;;;|
 ;;;;|----------------------------------------------------|
 
 ;;;;|----------------------------------------------------|
-;;;;| (company)
+;;;;| (fullscreen)
 ;;;;|----------------------------------------------------|
-(use-package company
-    :init
-      (global-company-mode t))
+; (defun fullscreen ()
+;        (interactive)
+;        (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+;                  '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
+; (fullscreen)
 ;;;;|----------------------------------------------------|

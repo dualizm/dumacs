@@ -11,3 +11,4 @@ auto-save-list
 auto-saves/*
 backups/*
 eshell
+ido.last

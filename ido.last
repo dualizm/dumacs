@@ -2,7 +2,8 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/" . "4/")
+ ("/home/" . "nim/")
+ ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/" . "3/")
  ("/home/nim/dev/git_projects/cl-learn/" . "practical-common-lisp/")
  ("/home/nim/dev/git_projects/" . "cl-learn/")
  ("/home/nim/dev/" . "git_projects/")
@@ -10,16 +11,28 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/nim/dev/git_projects/cl-learn/"
+ "/home/nim/dev/git_projects/cl-learn/practical-common-lisp/3/"
+ "/home/nim/dev/git_projects/cl-learn/practical-common-lisp/2/"
  "/home/nim/dev/git_projects/cl-learn/practical-common-lisp/4/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "cl-cookbook"
  "main.lisp"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/3/" (25417 6535 885767 383000) "../" "my-db.db" "./" "main.lisp")
+
+ ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/2/" (25417 3225 75597 552000) "../" "./" "main.lib" "main.fas" "main.lisp")
+
+ ("/home/nim/.ncmpcpp/" (25358 53964 997707 960000) "../" "error.log" "./")
+
+ ("/home/nim/dev/crelex-lang/" (25399 22486 634032 388000) "../" ".git/" "aid_ru.cx" "./" "README.md" "LICENSE")
+
  ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/4/" (25420 6275 318068 70000) "../" "./" "main.lisp")
 
  ("/home/nim/dev/git_projects/cl-learn/practical-common-lisp/" (25363 61377 970304 125000) "../" "2/" "3/" "./" "4/")

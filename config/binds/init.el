@@ -1,4 +1,4 @@
-;;;;|--------------------------------------------------------|
+;;;;|----------------------------------------------------|
 ;;;;| AUTHORS notidman <ognieff@yandex.ru>
 ;;;;|
 ;;;;| @URL https://github.com/notidman/nimacs
@@ -9,24 +9,18 @@
 ;;;;|
 ;;;;| @BRIEF contains bindings for nimacs
 ;;;;|
-;;;;|--------------------------------------------------------|
+;;;;|----------------------------------------------------|
 
-;;;|---------------------------------------------------------|
-;;;| (binds)
-;;;|---------------------------------------------------------|
+;;;;|----------------------------------------------------|
+;;;;| (binds)
+;;;;|----------------------------------------------------|
 (load-binds '(
-    ; move ;move in text
-    ; edit-text ; edit text
-    bar ; f1 f2 f3 f4...
+    move      ; move in text
+  ; edit-text ; edit text
+    bar       ; f1 f2 f3 f4...
 ))
-;;;|---------------------------------------------------------|
+;;;;|----------------------------------------------------|
 
-; ;;; [BIND'S]
-; ;;==============================================
-; (global-set-key (kbd "<f1>") 'bs-show)
-; (global-set-key (kbd "<f2>") 'save-buffer)
-; ;(global-set-key (kbd "M-e") 'RET)
-;
 ; ;; [FILE<EDIT]
 ; ;(global-set-key (kbd "M-u") 'undo)
 ;
@@ -35,9 +29,3 @@
 ; ;(global-set-key (kbd "M-f") 'ido-find-file)
 ; ;(global-set-key (kbd "C-f") 'projectile-find-file)
 ; ;(global-set-key (kbd "C-g") 'projectile-grep)
-;
-; ;; [COPY<PASTE]
-; ;(global-set-key (kbd "C-x") 'kill-region)
-; ;(global-set-key (kbd "C-c") 'kill-region-save)
-; ;(global-set-key (kbd "C-v") 'yank)
-; ;;==============================================

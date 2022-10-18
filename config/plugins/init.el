@@ -1,4 +1,4 @@
-;;;;|--------------------------------------------------------|
+;;;;|----------------------------------------------------|
 ;;;;| AUTHORS notidman <ognieff@yandex.ru>
 ;;;;|
 ;;;;| @URL https://github.com/notidman/nimacs
@@ -9,24 +9,25 @@
 ;;;;|
 ;;;;| @BRIEF contains plugins for nimacs
 ;;;;|
-;;;;|--------------------------------------------------------|
+;;;;|----------------------------------------------------|
 
-;;;|---------------------------------------------------------|
-;;;| (plugins)
-;;;|---------------------------------------------------------|
+;;;;|----------------------------------------------------|
+;;;;| (plugins)
+;;;;|----------------------------------------------------|
 (load-plugins '(
     use-package         ; improvements require
     pulse               ; cool bean
     smooth-scroll       ; cool scroll
     sly                 ; old -> slime
-    evil                ; hjkl
+  ; evil                ; hjkl (bad for emacs)
     lsp                 ; auto complete
     linum               ; line numbers
     rainbow-mode        ; hightlight #d34474
     rainbow-delimiters  ; (((((((()))))))) many colors
     company             ; auto compl[ete]
-    ido                 ; interactively do things 
-    bs                  ; buffer selection
+  ; bs                  ; buffer selection
+    ivy                 ; tools for minibuffer completion
+  ; ido                 ; interactively do things 
   ; projectlite         ; project interaction library
 )) 
-;;;|---------------------------------------------------------|
+;;;;|----------------------------------------------------|

@@ -7,14 +7,15 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF plugin config
+;;;;| @BRIEF settings config
 ;;;;|
 ;;;;|----------------------------------------------------|
 
 ;;;;|----------------------------------------------------|
-;;;;| (company)
+;;;;| (transparency)
 ;;;;|----------------------------------------------------|
-(use-package company
-    :init
-      (global-company-mode t))
+; ;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
+; ;;(set-frame-parameter (selected-frame) 'alpha <both>)
+; (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+; (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
 ;;;;|----------------------------------------------------|
