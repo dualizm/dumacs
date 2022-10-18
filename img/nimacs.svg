@@ -8,7 +8,7 @@
    version="1.1"
    id="svg8124"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="nimacs-v6.2r.svg"
+   sodipodi:docname="nimacs-v6.4r.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +148,7 @@
        ry="1.6059526" />
     <path
        sodipodi:type="star"
-       style="fill:#d34474;fill-opacity:1;stroke:#ffffff;stroke-width:3.96163028;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:31.6930422, 31.6930422;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       style="fill:#da004a;fill-opacity:1;stroke:#da004a;stroke-width:3.96163;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:31.693, 31.693;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
        id="path12792"
        inkscape:flatsided="false"
        sodipodi:sides="4"
@@ -160,7 +160,7 @@
        sodipodi:arg2="-0.34352972"
        inkscape:rounded="0"
        inkscape:randomized="0"
-       transform="matrix(0.22859527,-0.10705479,0.10705479,0.22859527,-3.6539869,6.4337979)"
+       transform="matrix(0.22863271,-0.1116337,0.10707233,0.23837268,-3.6611381,3.1319975)"
        d="m 136.23644,210.63851 -5.73052,31.80138 24.6009,20.95143 -31.80138,-5.73051 -20.95144,24.60089 5.73051,-31.80138 -24.600888,-20.95143 31.801378,5.73051 z" />
     <path
        style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
