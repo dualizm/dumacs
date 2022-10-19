@@ -16,18 +16,19 @@
 ;;;;|----------------------------------------------------|
 (use-package lsp-mode
     :hook (
-           (c-mode      . lsp-deferred)
-           (c++-mode    . lsp-deferred)
-           (clojure-lsp . lsp-deferred)))
+           (c-mode                . lsp-deferred)
+           (c++-mode              . lsp-deferred)
+           (clojure-lsp           . lsp-deferred)
+           (cmake-language-server . lsp-deferred)))
 ;;;;|----------------------------------------------------|
 
 ;;;;|----------------------------------------------------|
 ;;;;| (additions)
 ;;;;|----------------------------------------------------|
-; (load-additions 'lsp '(
-;     lsp-ui
-;
-; ))
+(load-additions 'lsp '(
+    lsp-ui
+    lsp-ivy
+))
 ;;;;|----------------------------------------------------|
 
 
