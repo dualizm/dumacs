@@ -1,0 +1,1 @@
+("~/dev/git_projects/cl-learn/" "~/.emacs.d/")

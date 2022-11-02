@@ -27,7 +27,9 @@
     company             ; auto compl[ete]
   ; bs                  ; buffer selection
     ivy                 ; tools for minibuffer completion
+    yas                 ; template system
+    flycheck            ; syntax checking
   ; ido                 ; interactively do things 
-  ; projectlite         ; project interaction library
+    projectile          ; project interaction library
 )) 
 ;;;;|----------------------------------------------------|
