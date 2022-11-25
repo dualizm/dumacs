@@ -12,16 +12,9 @@
 ;;;;|----------------------------------------------------|
 
 ;;;;|----------------------------------------------------|
-;;;;| (linum/linum-relative)
+;;;;| (evil/evil-commentary)
 ;;;;|----------------------------------------------------|
-(use-package linum-relative
-  :config (linum-relative-mode t)
-  :custom-face
-  (linum-relative-current-fce
-   ((t :foreground "red" :background "blue"))))
+(use-package evil-commentary
+  :init
+  (evil-commentary-mode t))
 ;;;;|----------------------------------------------------|
-;; (defface realgud-overlay-arrow1
-;;   '((((background  dark)) :foreground "green" :weight bold)
-;;     (((background light)) :foreground "black" :weight bold))
-;;   "Fringe face for current position."
-;;   :group 'realgud)

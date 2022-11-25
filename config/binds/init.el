@@ -15,8 +15,8 @@
 ;;;;| (binds)
 ;;;;|----------------------------------------------------|
 (load-binds '(
-    move      ; move in text
-  ; edit-text ; edit text
+    ;; move      ; move in text
+    ;; edit-text ; edit text
     bar       ; f1 f2 f3 f4...
 ))
 ;;;;|----------------------------------------------------|

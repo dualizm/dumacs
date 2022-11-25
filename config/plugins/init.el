@@ -19,17 +19,19 @@
     pulse               ; cool bean
     smooth-scroll       ; cool scroll
     sly                 ; old -> slime
-  ; evil                ; hjkl (bad for emacs)
+    evil                ; hjkl 
     lsp                 ; auto complete
     linum               ; line numbers
     rainbow-mode        ; hightlight #d34474
     rainbow-delimiters  ; (((((((()))))))) many colors
     company             ; auto compl[ete]
-  ; bs                  ; buffer selection
+ ;; bs                  ; buffer selection
     ivy                 ; tools for minibuffer completion
     yas                 ; template system
     flycheck            ; syntax checking
-  ; ido                 ; interactively do things 
+ ;; ido                 ; interactively do things 
     projectile          ; project interaction library
+    magit               ; power git!!!! 
+    
 )) 
 ;;;;|----------------------------------------------------|

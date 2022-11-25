@@ -17,7 +17,7 @@
 
 (defface linum-current-line-number-face
   `((t :inherit linum
-       :foreground "#d34474"
+       :foreground "goldrod" ;;"#d34474"
        :weight bold))
   "Face for displaying the current line number."
   :group 'linum)

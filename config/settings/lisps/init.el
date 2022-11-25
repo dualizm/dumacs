@@ -7,20 +7,12 @@
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
-;;;;| @BRIEF file contains theme configuration
+;;;;| @BRIEF settings config
 ;;;;|
 ;;;;|----------------------------------------------------|
 
 ;;;;|----------------------------------------------------|
-;;;;| (theme config_
+;;;;| (lisps)
 ;;;;|----------------------------------------------------|
-; (load-theme 'modus-vivendi t)
-;(use-package cherry-blossom-theme
-;    :config
-;    (load-theme 'cherry-blossom t))
-;(set-face-background 'mode-line "black")
-
-(use-package jazz-theme
-  :config
-  (load-theme 'jazz t))
+(set-variable 'scheme-program-name "csi")
 ;;;;|----------------------------------------------------|
