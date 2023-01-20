@@ -1,6 +1,6 @@
-# Nimacs ☥
+# Ezmacs ☥
 
-<p align="center"><img src="img/nimacs.svg" alt="Nimacs"/></p>
+<p align="center"><img src="img/ezmacs.svg" alt="ezmacs"/></p>
 
 - - -
 **Quick Start**

@@ -1,9 +1,9 @@
 ;;;;|----------------------------------------------------|
-;;;;| @AUTHORS notidman <ognieff@yandex.ru>
+;;;;| @AUTHORS ezqb <ognieff@yandex.ru>
 ;;;;|
-;;;;| @URL https://github.com/notidman/nimacs
+;;;;| @URL https://github.com/ezqb/ezmacs
 ;;;;|
-;;;;| @PROJECT-NAME nimacs
+;;;;| @PROJECT-NAME ezmacs
 ;;;;|
 ;;;;| @DATE-START 29-09-22
 ;;;;|
@@ -12,7 +12,7 @@
 ;;;;|----------------------------------------------------|
 
 ; contains configuration functions
-(load "~/.emacs.d/nimacs-api.el") 
+(load "~/.emacs.d/ezmacs-api.el") 
 
 ;;;;|----------------------------------------------------|
 ;;;;| (configuration files)
