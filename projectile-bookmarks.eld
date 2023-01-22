@@ -1,1 +1,0 @@
-("~/dev/cxx/sdl_learn/" "~/dev/scheme/" "~/dev/git_projects/cl-learn/" "~/.emacs.d/" "~/dev/git_projects/wasm-learn/")
