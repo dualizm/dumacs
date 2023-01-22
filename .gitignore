@@ -24,5 +24,6 @@
 .projectile
 .tern-port
 .yas-compiled-snippets.el
+elpa/*
 .auto-saves/*
 .backups/*

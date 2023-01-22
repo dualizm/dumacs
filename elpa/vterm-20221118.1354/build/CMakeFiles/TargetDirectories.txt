@@ -1,4 +1,0 @@
-/home/nim/.emacs.d/elpa/vterm-20221118.1354/build/CMakeFiles/vterm-module.dir
-/home/nim/.emacs.d/elpa/vterm-20221118.1354/build/CMakeFiles/run.dir
-/home/nim/.emacs.d/elpa/vterm-20221118.1354/build/CMakeFiles/edit_cache.dir
-/home/nim/.emacs.d/elpa/vterm-20221118.1354/build/CMakeFiles/rebuild_cache.dir
