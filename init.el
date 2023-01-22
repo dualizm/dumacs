@@ -11,22 +11,6 @@
 ;;;;|
 ;;;;|----------------------------------------------------|
 
-;;;;| package
-(require 'package)
-(setf package-archives
-      '(("melpa" . "https://melpa.org/packages/")
-        ("elpa" . "https://elpa.gnu.org/packages/")
-        ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
-(package-initialize)
-
-(dolist (package '(use-package))
-   (unless (package-installed-p package)
-       (package-install package)))
-
-(eval-and-compile
-  (setq use-package-always-ensure t
-        use-package-expand-minimally t))
-
 ;;;;| settings
 ;; gui
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -41,9 +25,9 @@
 
 ;; auto-save
 (setq backup-directory-alist
-      `((".*" . "~/.emacs.d/backups/")))
+      `((".*" . "~/.emacs.d/.backups/")))
 (setq auto-save-file-name-transforms
-      `((".*" "~/.emacs.d/auto-saves/" t)))
+      `((".*" "~/.emacs.d/.auto-saves/" t)))
 ;; start screen
 (setq inhibit-startup-screen t)
 
@@ -62,13 +46,73 @@
 ;; theme
 ; (load-theme 'modus-vivendi t)
 
+;;;;| package
+(require 'package)
+(setf package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+	("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("elpa" . "https://elpa.gnu.org/packages/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+(package-initialize)
 
+(dolist (package '(use-package))
+   (unless (package-installed-p package)
+       (package-install package)))
+
+(eval-and-compile
+  (setq use-package-always-ensure t
+        use-package-expand-minimally t))
+
+(eval-and-compile
+  (require 'use-package))
+
+;; global
+(use-package company
+  :init (global-company-mode t)
+  (setq company-idle-delay 0))
+
+;;(use-package magit)
+(use-package vertico
+  :init (vertico-mode))
+(use-package vterm)
+(use-package avy
+  :bind (("C-:" . 'avy-goto-char)
+	 ("C-'" . 'avy-goto-char-2)
+	 ("M-g l" . 'avy-goto-line)
+	 ("M-g f" . 'avy-goto-word-1)))
+  
+(use-package yasnippet
+  :config (yas-global-mode t))
+
+(use-package rainbow-mode
+  :hook (prog-mode . rainbow-mode))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+;; lisp
+(use-package sly)
+(use-package geiser-racket)
+(use-package geiser-chicken)
+
+;; theme
+(use-package doom-themes
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-flatwhite t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(use-package)))
+ '(package-selected-packages
+   '(magit yasnippet vterm vertico use-package sly rainbow-mode rainbow-delimiters geiser-racket geiser-chicken doom-themes company avy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
