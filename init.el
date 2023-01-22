@@ -71,6 +71,8 @@
   :init (global-company-mode t)
   (setq company-idle-delay 0))
 
+(use-package pdf-tools)
+
 ;;(use-package magit)
 (use-package vertico
   :init (vertico-mode))
@@ -106,13 +108,16 @@
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(magit yasnippet vterm vertico use-package sly rainbow-mode rainbow-delimiters geiser-racket geiser-chicken doom-themes company avy)))
+   '(pdf-tools magit yasnippet vterm vertico use-package sly rainbow-mode rainbow-delimiters geiser-racket geiser-chicken doom-themes company avy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
