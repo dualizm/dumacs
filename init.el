@@ -19,9 +19,9 @@
 
 ;; font
 (set-frame-font 
-  "-SAJA-CaskaydiaCove Nerd Font-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
+  "Monoid"
   nil t)
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 100)
 
 ;; auto-save
 (setq backup-directory-alist
@@ -34,8 +34,8 @@
 ;; transparency
 ; ;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
 ; ;;(set-frame-parameter (selected-frame) 'alpha <both>)
-; (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
-; (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+(set-frame-parameter (selected-frame) 'alpha '(95 . 50))
+;(add-to-list 'default-frame-alist '(alpha . (85 . 50)))
 
 ;; fullscreen
 ; ((lambda ()
@@ -73,10 +73,12 @@
 
 (use-package pdf-tools)
 
+(use-package transpose-frame)
+
 ;;(use-package magit)
 (use-package vertico
   :init (vertico-mode))
-(use-package vterm)
+;(use-package vterm)
 (use-package avy
   :bind (("C-:" . 'avy-goto-char)
 	 ("C-'" . 'avy-goto-char-2)
@@ -103,24 +105,8 @@
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-flatwhite t)
+  (load-theme 'doom-ayu-dark t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
-
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(pdf-tools magit yasnippet vterm vertico use-package sly rainbow-mode rainbow-delimiters geiser-racket geiser-chicken doom-themes company avy)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
