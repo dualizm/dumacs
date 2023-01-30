@@ -19,9 +19,9 @@
 
 ;; font
 (set-frame-font 
-  "Monoid"
-  nil t)
-(set-face-attribute 'default nil :height 100)
+ "-UKWN-Iosevka Nerd Font Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"
+ nil t)
+(set-face-attribute 'default nil :height 110)
 
 ;; auto-save
 (setq backup-directory-alist
@@ -95,6 +95,7 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; lisp
+(setq inferior-lisp-program "sbcl")
 (use-package sly)
 (use-package geiser-racket)
 (use-package geiser-chicken)
@@ -110,3 +111,17 @@
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(doom-themes geiser-chicken geiser-racket sly rainbow-delimiters rainbow-mode yasnippet avy vertico transpose-frame pdf-tools company use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(put 'upcase-region 'disabled nil)
