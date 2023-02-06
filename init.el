@@ -11,46 +11,48 @@
 ;;;;|
 ;;;;|----------------------------------------------------|
 
-;;;;| settings
-;; gui
+;;; settings
+;;; gui
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
 
-;; font
+;;; font
 (set-frame-font 
- "-UKWN-Iosevka Nerd Font Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"
+ "-fsdf-PragmataPro-normal-normal-normal-*-19-*-*-*-m-0-iso10646-1"
  nil t)
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 140)
 
-;; auto-save
+;;; auto-save
 (setq backup-directory-alist
       `((".*" . "~/.emacs.d/.backups/")))
 (setq auto-save-file-name-transforms
       `((".*" "~/.emacs.d/.auto-saves/" t)))
-;; start screen
+;;; start screen
 (setq inhibit-startup-screen t)
 
-;; transparency
-; ;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
-; ;;(set-frame-parameter (selected-frame) 'alpha <both>)
+;;; transparency
+;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
+;;(set-frame-parameter (selected-frame) 'alpha <both>)
 (set-frame-parameter (selected-frame) 'alpha '(95 . 50))
-;(add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+;;(add-to-list 'default-frame-alist '(alpha . (100 . 50)))
 
-;; fullscreen
-; ((lambda ()
-;        (interactive)
-;        (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-;                  '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
+;;; fullscreen
+;;((lambda ()
+;;   (interactive)
+;;       (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+;;			       '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
 
-;; theme
-; (load-theme 'modus-vivendi t)
+;;; mode line
+(setq display-time-24hr-format t)
+(setq display-time-interval 1)
+(display-time)
 
-;;;;| package
+;;; package
 (require 'package)
 (setf package-archives
-      '(("melpa" . "https://melpa.org/packages/")
-	("melpa-stable" . "https://stable.melpa.org/packages/")
+      '(("melpa-stable" . "https://stable.melpa.org/packages/")
+	("melpa" . "https://melpa.org/packages/")
         ("elpa" . "https://elpa.gnu.org/packages/")
         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
@@ -66,19 +68,32 @@
 (eval-and-compile
   (require 'use-package))
 
-;; global
+;;; orgmode
+(defun org-mode-setup ()
+  (org-indent-mode))
+;;  (variable-pitch-mode 1)
+;;  (auto-fill-mode 0)
+;;  (visual-line-mode 1))
+
+(use-package org
+  :hook (org-mode . org-mode-setup))
+
+(use-package org-bullets
+  :hook
+  (org-mode . org-bullets-mode))
+
+;;; global
 (use-package company
   :init (global-company-mode t)
   (setq company-idle-delay 0))
 
 (use-package pdf-tools)
-
+(use-package meson-mode)
 (use-package transpose-frame)
-
-;;(use-package magit)
+(use-package magit)
 (use-package vertico
   :init (vertico-mode))
-;(use-package vterm)
+;;;(use-package vterm)
 (use-package avy
   :bind (("C-:" . 'avy-goto-char)
 	 ("C-'" . 'avy-goto-char-2)
@@ -101,34 +116,36 @@
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
+<<<<<<< HEAD
+;;; lisp
+=======
 ;; lisp
+>>>>>>> 2199aaa ([upd])
 (setq inferior-lisp-program "sbcl")
 (use-package sly)
 (use-package geiser-racket)
 (use-package geiser-chicken)
+(use-package geiser-guile)
 
-;; theme
-(use-package doom-themes
-  :config
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-ayu-dark t)
-
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
+;;; theme
+(use-package cherry-blossom-theme)
+(use-package naysayer-theme)
+(use-package orangey-bits-theme)
+(load-theme 'cherry-blossom t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
+<<<<<<< HEAD
+   '(magit org-bullets yasnippet vertico use-package transpose-frame sly rainbow-mode rainbow-delimiters pdf-tools orangey-bits-theme naysayer-theme meson-mode makefile-executor lsp-ui jazz-theme green-screen-theme geiser-racket geiser-guile geiser-chicken doom-themes company cherry-blossom-theme avy)))
+=======
    '(lsp-ui lsp-mode makefile-executor doom-themes geiser-chicken geiser-racket sly rainbow-delimiters rainbow-mode yasnippet avy vertico transpose-frame pdf-tools company use-package)))
+>>>>>>> 2199aaa ([upd])
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(put 'upcase-region 'disabled nil)

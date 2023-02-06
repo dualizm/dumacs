@@ -27,3 +27,6 @@
 elpa/*
 .auto-saves/*
 .backups/*
+transient/*
+.lsp-session-v1
+games/*
