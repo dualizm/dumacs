@@ -116,11 +116,7 @@
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
-<<<<<<< HEAD
 ;;; lisp
-=======
-;; lisp
->>>>>>> 2199aaa ([upd])
 (setq inferior-lisp-program "sbcl")
 (use-package sly)
 (use-package geiser-racket)
@@ -132,20 +128,3 @@
 (use-package naysayer-theme)
 (use-package orangey-bits-theme)
 (load-theme 'cherry-blossom t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-<<<<<<< HEAD
-   '(magit org-bullets yasnippet vertico use-package transpose-frame sly rainbow-mode rainbow-delimiters pdf-tools orangey-bits-theme naysayer-theme meson-mode makefile-executor lsp-ui jazz-theme green-screen-theme geiser-racket geiser-guile geiser-chicken doom-themes company cherry-blossom-theme avy)))
-=======
-   '(lsp-ui lsp-mode makefile-executor doom-themes geiser-chicken geiser-racket sly rainbow-delimiters rainbow-mode yasnippet avy vertico transpose-frame pdf-tools company use-package)))
->>>>>>> 2199aaa ([upd])
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
