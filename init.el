@@ -1,7 +1,7 @@
 ;;;;|----------------------------------------------------|
-;;;;| @AUTHORS ezqb <ognieff@yandex.ru>
+;;;;| @AUTHORS cloezure <ognieff@yandex.ru>
 ;;;;|
-;;;;| @URL https://github.com/ezqb/ezmacs
+;;;;| @URL https://github.com/cloezure/ezmacs
 ;;;;|
 ;;;;| @PROJECT-NAME ezmacs
 ;;;;|
@@ -18,8 +18,8 @@
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
 
 ;;; font
-(set-frame-font 
- "-fsdf-PragmataPro-normal-normal-normal-*-19-*-*-*-m-0-iso10646-1"
+(set-frame-font
+ "-PfEd-GohuFont NFM-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
  nil t)
 (set-face-attribute 'default nil :height 140)
 
@@ -87,6 +87,9 @@
   :init (global-company-mode t)
   (setq company-idle-delay 0))
 
+;;; music player
+(use-package bongo)
+
 (use-package pdf-tools)
 (use-package meson-mode)
 (use-package transpose-frame)
@@ -128,3 +131,44 @@
 (use-package naysayer-theme)
 (use-package orangey-bits-theme)
 (load-theme 'cherry-blossom t)
+
+
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+         (next-win-buffer (window-buffer (next-window)))
+         (this-win-edges (window-edges (selected-window)))
+         (next-win-edges (window-edges (next-window)))
+         (this-win-2nd (not (and (<= (car this-win-edges)
+                     (car next-win-edges))
+                     (<= (cadr this-win-edges)
+                     (cadr next-win-edges)))))
+         (splitter
+          (if (= (car this-win-edges)
+             (car (window-edges (next-window))))
+          'split-window-horizontally
+        'split-window-vertically)))
+    (delete-other-windows)
+    (let ((first-win (selected-window)))
+      (funcall splitter)
+      (if this-win-2nd (other-window 1))
+      (set-window-buffer (selected-window) this-win-buffer)
+      (set-window-buffer (next-window) next-win-buffer)
+      (select-window first-win)
+      (if this-win-2nd (other-window 1))))))
+(global-set-key (kbd "C-x |") 'toggle-window-split)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(emms-player-simple emms orangey-bits-theme naysayer-theme cherry-blossom-theme geiser-guile geiser-chicken geiser-racket sly lsp-ui lsp-mode makefile-executor rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame meson-mode pdf-tools company org-bullets use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
