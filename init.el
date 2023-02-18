@@ -1,4 +1,4 @@
-;;;;|----------------------------------------------------|
+;;;;|
 ;;;;| @AUTHORS cloezure <ognieff@yandex.ru>
 ;;;;|
 ;;;;| @URL https://github.com/cloezure/ezmacs
@@ -9,7 +9,6 @@
 ;;;;|
 ;;;;| @BRIEF contains loadable modules for config.
 ;;;;|
-;;;;|----------------------------------------------------|
 
 ;;; settings
 ;;; gui
@@ -130,8 +129,8 @@
 (use-package cherry-blossom-theme)
 (use-package naysayer-theme)
 (use-package orangey-bits-theme)
-(load-theme 'cherry-blossom t)
-
+(use-package jazz-theme)
+(load-theme 'jazz t)
 
 (defun toggle-window-split ()
   (interactive)
@@ -159,16 +158,3 @@
       (if this-win-2nd (other-window 1))))))
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(emms-player-simple emms orangey-bits-theme naysayer-theme cherry-blossom-theme geiser-guile geiser-chicken geiser-racket sly lsp-ui lsp-mode makefile-executor rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame meson-mode pdf-tools company org-bullets use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
