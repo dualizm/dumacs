@@ -29,5 +29,6 @@ elpa/*
 .backups/*
 transient/*
 .lsp-session*
+emms/*
 games/*
 tramp

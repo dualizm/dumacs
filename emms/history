@@ -1,9 +1,0 @@
-;;; emms history -*- mode: emacs-lisp; coding: utf-8; -*-
-(
-;; active playlist
-" *EMMS Playlist*"
-;; playlists: ((BUFFER_NAME SELECT_POSITION TRACKS) ...)
-((" *EMMS Playlist*" 141 ((*track* (type . file) (name . "/home/ez/music/Silent Hill (Original Video Game Soundtrack)-017.flac") (info-mtime 25111 64430 0 0)) (*track* (type . file) (name . "/home/ez/music/Silent Hill 2 - Original Video Game Soundtrack-015.flac") (info-mtime 25111 62929 0 0)) (*track* (type . file) (name . "/home/ez/music/Ария - Беспечный ангел.mp3") (info-artist . "Ария") (info-title . "Беспечный ангел") (info-label . "Мороз рекордс") (info-year . "2002") (info-album . "Легенды русского рока. Ария. Выпуск 2") (info-genre . "Classicmetal") (info-albumartist . "Ария") (info-mtime 25358 53440 0 0)) (*track* (type . file) (name . "/home/ez/music/КОРОЛЬ И ШУТ ✮ ЛУЧШИЕ ПЕСНИ ✮ ТОП 50.m4a") (info-mtime 24842 56072 0 0)))))
-;; play method
-((emms-repeat-track) (emms-repeat-playlist))
-)
