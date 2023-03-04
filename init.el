@@ -1,17 +1,25 @@
+;;; init.el --- Initialization file for ezmacs
+
+;;; Commentary:
+
+;; ezmacs startup file --- Initialization for ezmacs
+
+;;; Code:
+
 (defvar ezmacs-info
   '((file         . "init.el")
     (authors      . "cloezure")
+    (version      . "0.0.2")
     (email        . "ognieff@yandex.ru")
     (url          . "https://github.com/cloezure/ezmacs")
     (project-name . "ezmacs")
     (date-start   . "29-09-22")
-    (brief        . "config for author")))
+    (brief        . "config for author"))
+  "Contain information about the ezmacs build.")
 
 (defun ezmacs-about (key)
+  "KEY: value from ezmacs-info."
   (message (cdr (assoc key ezmacs-info))))
-
-;;; daemon
-(server-start)
 
 ;;; settings
 ;;; gui
@@ -20,12 +28,12 @@
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
 
 ;;; font
-;;(set-frame-font
-;; "-PfEd-GohuFont NFM-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
-;; nil t)
-(set-face-attribute 'default nil :height 140)
+(let ((hack "-SRC-Hack Nerd Font-bold-normal-normal-*-19-*-*-*-m-0-iso10646-1"))
+  (when (find-font (font-spec :name hack))
+    (set-face-attribute 'default nil :font hack :height 140)))
 
 (defmacro unless-cond (&rest cases)
+  "CASES: list forms."
   `(progn
      ,@(mapcar #'(lambda (case) `(unless ,(car case) ,(cadr case))) cases)))
 
@@ -100,14 +108,11 @@
   :hook (prog-mode . highlight-indent-guides-mode))
 
 ;;; orgmode
-(defun org-mode-setup ()
-  (org-indent-mode))
 ;;  (variable-pitch-mode 1)
 ;;  (auto-fill-mode 0)
 ;;  (visual-line-mode 1))
-
 (use-package org
-  :hook (org-mode . org-mode-setup))
+  :hook (org-mode . org-indent-mode))
 
 (use-package org-bullets
   :hook
@@ -146,8 +151,9 @@
   :commands lsp-ui-mode)
 
 ;;; lisp
-(setq inferior-lisp-program "sbcl")
-(use-package sly)
+(use-package sly
+  :init
+  (setq inferior-lisp-program "sbcl"))
 (use-package geiser-racket)
 (use-package geiser-chicken)
 (use-package geiser-guile)
@@ -155,10 +161,6 @@
 ;;; c/cxx
 (use-package meson-mode)
 (use-package makefile-executor)
-
-;;; nix
-(use-package nix-mode
-  :mode "\\.nix\\'")
 
 ;;; theme
 (use-package cherry-blossom-theme)
@@ -192,17 +194,3 @@
 	  (select-window first-win)
 	  (if this-win-2nd (other-window 1))))))
 (global-set-key (kbd "C-x |") 'toggle-window-split)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(flycheck highlight-indent-guides nix-mode yasnippet vertico use-package transpose-frame sly rainbow-mode rainbow-delimiters pdf-tools org-bullets orangey-bits-theme naysayer-theme meson-mode makefile-executor magit lsp-ui jazz-theme geiser-racket geiser-guile geiser-chicken company cherry-blossom-theme bongo avy)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
