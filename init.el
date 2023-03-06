@@ -146,7 +146,8 @@
 
 (use-package lsp-mode
   :hook ((c-mode . lsp-deferred)
-	 (c++-mode . lsp-deferred)))
+	 (c++-mode . lsp-deferred)
+	 (haskell-mode . lsp-deferred)))
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
