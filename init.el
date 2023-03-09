@@ -21,6 +21,12 @@
   "KEY: value from ezmacs-info."
   (message (cdr (assoc key ezmacs-info))))
 
+(defun open-config ()
+  "Open ezmacs config."
+  (find-file "~/.emacs.d/init.el"))
+
+(defalias 'open-config 'emacs-lisp-byte-compile)
+
 ;;; settings
 ;;; gui
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -163,12 +169,17 @@
 (use-package meson-mode)
 (use-package makefile-executor)
 
-;;; theme
+;;; themes
 (use-package cherry-blossom-theme)
-(use-package naysayer-theme)
-(use-package orangey-bits-theme)
 (use-package jazz-theme)
-(load-theme 'cherry-blossom t)
+(use-package doom-themes
+  :config
+  (setq doom-themes-enable-bold t
+	doom-themes-enable-italic t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
+
+(load-theme 'doom-flatwhite t)
 
 (defun toggle-window-split ()
   (interactive)
@@ -195,3 +206,16 @@
 	  (select-window first-win)
 	  (if this-win-2nd (other-window 1))))))
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken geiser-racket sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
