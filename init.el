@@ -37,9 +37,9 @@
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
 
 ;;; font
-(let ((hack "-SRC-Hack Nerd Font-bold-normal-normal-*-19-*-*-*-m-0-iso10646-1"))
-  (when (find-font (font-spec :name hack))
-    (set-face-attribute 'default nil :font hack :height 140)))
+(let ((font "-JB-JetBrains Mono-normal-normal-normal-*-19-*-*-*-m-0-iso10646-1"))
+  (when (find-font (font-spec :name font))
+    (set-face-attribute 'default nil :font font :height 140)))
 
 (defmacro unless-cond (&rest cases)
   "CASES: list forms."
@@ -162,17 +162,37 @@
 (use-package lsp-mode
   :hook ((c-mode . lsp-deferred)
 	 (c++-mode . lsp-deferred)
-	 (haskell-mode . lsp-deferred)))
+	 ;; web mods
+	 (css-mode . lsp-deferred)
+	 (web-mode . lsp-deferred)
+	 (html-mode . lsp-deferred)
+	 (gfm-mode  . lsp-deferred)
+	 (gfm-view-mode . lsp-deferred)
+	 (sgml-mode  . lsp-deferred)
+	 (json-mode  . lsp-deferred)
+	 (js2-mode  . lsp-deferred)))
+	 
 (use-package lsp-ui
   :commands lsp-ui-mode)
+
+;; web
+(use-package js2-mode)
+(use-package css-mode)
 
 ;;; lisp
 (use-package sly
   :init
   (setq inferior-lisp-program "sbcl"))
+
+;; scheme
 (use-package geiser-racket)
 (use-package geiser-chicken)
 (use-package geiser-guile)
+
+;; clojure
+(use-package clojure-mode)
+(use-package cider)
+(use-package inf-clojure)
 
 ;;; c/cxx
 (use-package meson-mode)
@@ -223,7 +243,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken geiser-racket sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
+   '(html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken geiser-racket sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
