@@ -189,10 +189,18 @@
 (use-package geiser-chicken)
 (use-package geiser-guile)
 
+;; racket
+(use-package racket-mode
+  :hook
+  (racket-mode . racket-xp-mode))
+
 ;; clojure
 (use-package clojure-mode)
 (use-package cider)
 (use-package inf-clojure)
+
+;; haskell
+(use-package haskell-mode)
 
 ;;; c/cxx
 (use-package meson-mode)
@@ -202,6 +210,7 @@
 (use-package cherry-blossom-theme)
 (use-package jazz-theme)
 (use-package humanoid-themes)
+(use-package gruber-darker-theme)
 (use-package doom-themes
   :config
   (setq doom-themes-enable-bold t
@@ -210,7 +219,7 @@
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
-(load-theme 'doom-earl-grey t)
+(load-theme 'gruber-darker t)
 
 (defun toggle-window-split ()
   (interactive)
@@ -243,7 +252,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken geiser-racket sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
+   '(gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
