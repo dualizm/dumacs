@@ -77,11 +77,20 @@
 (setq display-time-interval 1)
 (display-time)
 
+;;; prettify-symbols
+(setq prettify-symbols-alist '(("lambda" . 955)))
+
 ;;; bind
 (global-set-key (kbd "M-h") 'left-char)
 (global-set-key (kbd "M-j") 'next-line)
 (global-set-key (kbd "M-k") 'previous-line)
 (global-set-key (kbd "M-l") 'right-char)
+
+;;; place lambda
+(global-set-key (kbd "C-x p l")
+		(lambda ()
+		  (interactive)
+		  (insert (char-from-name "GREEK SMALL LETTER LAMBDA"))))
 
 ;;; package
 (require 'package)
@@ -113,8 +122,19 @@
   :init
   (global-flycheck-mode t))
 
-;;; music player
-(use-package bongo)
+(use-package paredit
+  :config
+  (dolist (m '(emacs-lisp-mode-hook
+               racket-mode-hook
+               racket-repl-mode-hook))
+    (add-hook m #'paredit-mode))
+  (bind-keys :map paredit-mode-map
+             ("{"   . paredit-open-curly)
+             ("}"   . paredit-close-curly))
+  (unless terminal-frame
+    (bind-keys :map paredit-mode-map
+               ("M-[" . paredit-wrap-square)
+               ("M-{" . paredit-wrap-curly))))
 
 ;;; highlight-indent-guides
 (use-package highlight-indent-guides
@@ -185,7 +205,6 @@
   (setq inferior-lisp-program "sbcl"))
 
 ;; scheme
-(use-package geiser-racket)
 (use-package geiser-chicken)
 (use-package geiser-guile)
 
@@ -252,7 +271,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
+   '(paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

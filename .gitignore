@@ -29,6 +29,8 @@ elpa/*
 .backups/*
 transient/*
 .lsp-session*
+eln-cache/*
 emms/*
 games/*
+racket-mode/*
 tramp
