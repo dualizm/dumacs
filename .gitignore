@@ -34,3 +34,4 @@ emms/*
 games/*
 racket-mode/*
 tramp
+session.*

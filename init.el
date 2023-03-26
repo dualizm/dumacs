@@ -117,24 +117,15 @@
   :init (global-company-mode t)
   (setq company-idle-delay 0))
 
+;;; parens pairs
+(use-package smartparens
+  :hook
+  (prog-mode . smartparens-mode))
+
 ;;; syntax checking
 (use-package flycheck
   :init
   (global-flycheck-mode t))
-
-(use-package paredit
-  :config
-  (dolist (m '(emacs-lisp-mode-hook
-               racket-mode-hook
-               racket-repl-mode-hook))
-    (add-hook m #'paredit-mode))
-  (bind-keys :map paredit-mode-map
-             ("{"   . paredit-open-curly)
-             ("}"   . paredit-close-curly))
-  (unless terminal-frame
-    (bind-keys :map paredit-mode-map
-               ("M-[" . paredit-wrap-square)
-               ("M-{" . paredit-wrap-curly))))
 
 ;;; highlight-indent-guides
 (use-package highlight-indent-guides
@@ -180,24 +171,27 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package lsp-mode
-  :hook ((c-mode . lsp-deferred)
-	 (c++-mode . lsp-deferred)
+  :hook ((c-mode . lsp)
+	 (c++-mode . lsp)
 	 ;; web mods
-	 (css-mode . lsp-deferred)
-	 (web-mode . lsp-deferred)
-	 (html-mode . lsp-deferred)
-	 (gfm-mode  . lsp-deferred)
-	 (gfm-view-mode . lsp-deferred)
-	 (sgml-mode  . lsp-deferred)
-	 (json-mode  . lsp-deferred)
-	 (js2-mode  . lsp-deferred)))
+	 (css-mode . lsp)
+	 (web-mode . lsp)
+	 (html-mode . lsp)
+	 (json-mode  . lsp)
+	 (js2-mode  . lsp)))
 	 
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
-;; web
+;;; web
 (use-package js2-mode)
 (use-package css-mode)
+
+;;; angular
+(use-package ng2-mode)
+(use-package typescript-mode
+  :hook
+  (typescript-mode-hook . lsp))
 
 ;;; lisp
 (use-package sly
@@ -271,7 +265,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
+   '(js-mode jsx-mode emmet-mode smartparens ng2-mode paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
