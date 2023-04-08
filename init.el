@@ -144,6 +144,8 @@
 ;;; git client
 (use-package magit)
 
+(use-package consult)
+
 (use-package vertico
   :init (vertico-mode))
 
@@ -195,7 +197,6 @@
 ;; scheme
 (use-package geiser-chicken)
 (use-package geiser-chez)
-(use-package geiser-mit)
 
 ;; racket
 (use-package racket-mode
@@ -228,7 +229,7 @@
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
-(load-theme 'doom-feather-dark t)
+(load-theme 'doom-miramare t)
 
 (defun toggle-window-split ()
   (interactive)
@@ -261,7 +262,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(geiser-mit geiser-chez geiser-gambit lispy rmsbolt tree-sitter-langs tree-sitter-lang tree-sitter emacs-tree-sitter blackboard-theme sly-quicklisp js-mode jsx-mode emmet-mode smartparens ng2-mode paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
+   '(consult geiser-mit geiser-chez geiser-gambit lispy rmsbolt tree-sitter-langs tree-sitter-lang tree-sitter emacs-tree-sitter blackboard-theme sly-quicklisp js-mode jsx-mode emmet-mode smartparens ng2-mode paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
