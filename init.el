@@ -80,12 +80,6 @@
 ;;; prettify-symbols
 (setq prettify-symbols-alist '(("lambda" . 955)))
 
-;;; bind
-(global-set-key (kbd "M-h") 'left-char)
-(global-set-key (kbd "M-j") 'next-line)
-(global-set-key (kbd "M-k") 'previous-line)
-(global-set-key (kbd "M-l") 'right-char)
-
 ;;; place lambda
 (global-set-key (kbd "C-x p l")
 		(lambda ()
@@ -117,15 +111,13 @@
   :init (global-company-mode t)
   (setq company-idle-delay 0))
 
-;;; parens pairs
-(use-package smartparens
-  :hook
-  (prog-mode . smartparens-mode))
-
 ;;; syntax checking
 (use-package flycheck
   :init
   (global-flycheck-mode t))
+
+;;; disassembly
+(use-package rmsbolt)
 
 ;;; highlight-indent-guides
 (use-package highlight-indent-guides
@@ -196,11 +188,14 @@
 ;;; lisp
 (use-package sly
   :init
-  (setq inferior-lisp-program "sbcl"))
+  (setq inferior-lisp-program "sbcl")
+  :config
+  (use-package sly-quicklisp))
 
 ;; scheme
 (use-package geiser-chicken)
-(use-package geiser-guile)
+(use-package geiser-chez)
+(use-package geiser-mit)
 
 ;; racket
 (use-package racket-mode
@@ -224,6 +219,7 @@
 (use-package jazz-theme)
 (use-package humanoid-themes)
 (use-package gruber-darker-theme)
+(use-package blackboard-theme)
 (use-package doom-themes
   :config
   (setq doom-themes-enable-bold t
@@ -232,7 +228,7 @@
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
-(load-theme 'gruber-darker t)
+(load-theme 'doom-feather-dark t)
 
 (defun toggle-window-split ()
   (interactive)
@@ -265,7 +261,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(js-mode jsx-mode emmet-mode smartparens ng2-mode paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
+   '(geiser-mit geiser-chez geiser-gambit lispy rmsbolt tree-sitter-langs tree-sitter-lang tree-sitter emacs-tree-sitter blackboard-theme sly-quicklisp js-mode jsx-mode emmet-mode smartparens ng2-mode paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
