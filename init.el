@@ -9,7 +9,7 @@
 (defvar ezmacs-info
   '((file         . "init.el")
     (authors      . "cloezure")
-    (version      . "0.0.2")
+    (version      . "0.0.3")
     (email        . "ognieff@yandex.ru")
     (url          . "https://github.com/cloezure/ezmacs")
     (project-name . "ezmacs")
@@ -39,7 +39,9 @@
 ;;; font
 (let ((font "-JB-JetBrains Mono-normal-normal-normal-*-19-*-*-*-m-0-iso10646-1"))
   (when (find-font (font-spec :name font))
-    (set-face-attribute 'default nil :font font :height 140)))
+    (set-face-attribute 'default nil :font font :height 160)))
+
+(set-face-attribute 'default nil :font "-CTDB-Fira Code-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1" :height 130)
 
 (defmacro unless-cond (&rest cases)
   "CASES: list forms."
@@ -126,9 +128,9 @@
   :hook (prog-mode . highlight-indent-guides-mode))
 
 ;;; orgmode
-;;  (variable-pitch-mode 1)
-;;  (auto-fill-mode 0)
-;;  (visual-line-mode 1))
+;;;  (variable-pitch-mode 1)
+;;;  (auto-fill-mode 0)
+;;;  (visual-line-mode 1))
 (use-package org
   :hook (org-mode . org-indent-mode))
 
@@ -167,6 +169,7 @@
 (use-package lsp-mode
   :hook ((c-mode . lsp)
 	 (c++-mode . lsp)
+	 (rust-mode . lsp)
 	 ;; web mods
 	 (css-mode . lsp)
 	 (web-mode . lsp)
@@ -181,12 +184,6 @@
 (use-package js2-mode)
 (use-package css-mode)
 
-;;; angular
-(use-package ng2-mode)
-(use-package typescript-mode
-  :hook
-  (typescript-mode-hook . lsp))
-
 ;;; lisp
 (use-package sly
   :init
@@ -194,42 +191,26 @@
   :config
   (use-package sly-quicklisp))
 
-;; scheme
-(use-package geiser-chicken)
+;;; scheme
 (use-package geiser-chez)
 
-;; racket
+;;; racket
 (use-package racket-mode
   :hook
   (racket-mode . racket-xp-mode))
-
-;; clojure
-(use-package clojure-mode)
-(use-package cider)
-(use-package inf-clojure)
-
-;; haskell
-(use-package haskell-mode)
 
 ;;; c/cxx
 (use-package meson-mode)
 (use-package makefile-executor)
 
+;; rust
+(use-package rust-mode)
+
 ;;; themes
 (use-package cherry-blossom-theme)
 (use-package jazz-theme)
-(use-package humanoid-themes)
-(use-package gruber-darker-theme)
-(use-package blackboard-theme)
-(use-package doom-themes
-  :config
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
 
-  (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
-
-(load-theme 'doom-miramare t)
+(load-theme 'jazz t)
 
 (defun toggle-window-split ()
   (interactive)
@@ -255,17 +236,5 @@
 	  (set-window-buffer (next-window) next-win-buffer)
 	  (select-window first-win)
 	  (if this-win-2nd (other-window 1))))))
+
 (global-set-key (kbd "C-x |") 'toggle-window-split)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(consult geiser-mit geiser-chez geiser-gambit lispy rmsbolt tree-sitter-langs tree-sitter-lang tree-sitter emacs-tree-sitter blackboard-theme sly-quicklisp js-mode jsx-mode emmet-mode smartparens ng2-mode paredit gruber-darker-theme racket-mode haskell-mode html-mode js2-mode cider-mode inf-clojure cider clojure-mode humanoid-themes emacs-humanoid-themes color-theme-sanityinc-tomorrow ample-theme doom-themes jazz-theme orangey-bits-theme naysayer-theme cherry-blossom-theme makefile-executor meson-mode geiser-guile geiser-chicken sly lsp-ui lsp-mode rainbow-delimiters rainbow-mode yasnippet avy vertico magit transpose-frame pdf-tools org-bullets highlight-indent-guides bongo flycheck company use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
