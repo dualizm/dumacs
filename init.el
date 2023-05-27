@@ -29,6 +29,7 @@
 
 ;;; warnings
 (defvar warning-minimum-level :emergency)
+(setf visible-bell 1)
 
 (save-directories "~/.emacs.d/.backups/" "~/.emacs.d/.auto-saves/")
 
@@ -136,25 +137,20 @@
     | rainbow-mode
     :hook (prog-mode . rainbow-mode)
     | rainbow-delimiters
-    :hook (prog-mode . rainbow-delimiters-mode))
+    :hook (prog-mode . rainbow-delimiters-mode)
+    | paredit
+    :hook (prog-mode . paredit-mode))
 
 (|> lsp
     | lsp-mode
-    :hook ((c-mode . lsp)
-	   (c++-mode . lsp)
-	   (rust-mode . lsp)
-	   ;; web mods
-	   (css-mode . lsp)
-	   (web-mode . lsp)
-	   (html-mode . lsp)
-	   (json-mode . lsp)
-	   (js2-mode . lsp))
+    :hook ((c-mode . lsp-deferred)
+	   (c++-mode . lsp-deferred)
+	   (rust-mode . lsp-deferred)
+	   (clojure-mode . lsp-deferred)
+	   (ocaml-mode . lsp-deferred))
+    :commands (lsp lsp-deferred)
     | lsp-ui
     :commands lsp-ui-mode)
-
-(|> web
-    | js2-mode
-    | css-mode)
 
 (|> lisp
     | sly
@@ -171,6 +167,11 @@
     :hook
     (racket-mode . racket-xp-mode))
 
+(|> clojure
+    | clojure-mode
+    | cider
+    | inf-clojure)
+
 (|> c/cxx
     | meson-mode
     | makefile-executor)
@@ -182,6 +183,26 @@
     | cherry-blossom-theme
     | jazz-theme)
 
+(|> web
+    | js-doc
+    | js2-mode
+    | ac-js2
+    | web-mode
+    | json-mode)
+
 (load-theme 'jazz t)
 
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(geiser-chibi caml caml-mode ocaml-mode paredit-mode paredit parinfer-mode parinfer inf-clojure inf-clojure-mode cider cider-mode clojure-mode haskell-mode yasnippet vertico use-package transpose-frame sly-quicklisp rust-mode rmsbolt rainbow-mode rainbow-delimiters racket-mode pdf-tools org-bullets meson-mode makefile-executor magit lsp-ui js2-mode jazz-theme highlight-indent-guides geiser-guile geiser-gauche geiser-gambit geiser-chez flycheck consult company cherry-blossom-theme avy)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
