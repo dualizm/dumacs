@@ -146,11 +146,24 @@
     :hook ((c-mode . lsp-deferred)
 	   (c++-mode . lsp-deferred)
 	   (rust-mode . lsp-deferred)
-	   (clojure-mode . lsp-deferred)
-	   (ocaml-mode . lsp-deferred))
+	   (clojure-mode . lsp-deferred))
     :commands (lsp lsp-deferred)
     | lsp-ui
     :commands lsp-ui-mode)
+
+(|> ocaml
+    | tuareg
+    :mode "\\.ocamlinit\\'"
+    | dune
+    | utop
+    :hook (tuareg-mode . utop-minor-mode)
+    | merlin-mode
+    :hook ((tuareg-mode . merlin-mode)
+	   (merlin-mode . company-mode))
+    | merlin-eldoc
+    :hook (tuareg-mode . merlin-eldoc-setup)
+    | flycheck-ocaml
+    :config (flycheck-ocaml-setup))
 
 (|> lisp
     | sly
@@ -181,6 +194,7 @@
 
 (|> themes
     | cherry-blossom-theme
+    | naysayer-theme
     | jazz-theme)
 
 (|> web
@@ -190,7 +204,7 @@
     | web-mode
     | json-mode)
 
-(load-theme 'jazz t)
+(load-theme 'naysayer t)
 
 ;;; init.el ends here
 (custom-set-variables
@@ -199,7 +213,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(geiser-chibi caml caml-mode ocaml-mode paredit-mode paredit parinfer-mode parinfer inf-clojure inf-clojure-mode cider cider-mode clojure-mode haskell-mode yasnippet vertico use-package transpose-frame sly-quicklisp rust-mode rmsbolt rainbow-mode rainbow-delimiters racket-mode pdf-tools org-bullets meson-mode makefile-executor magit lsp-ui js2-mode jazz-theme highlight-indent-guides geiser-guile geiser-gauche geiser-gambit geiser-chez flycheck consult company cherry-blossom-theme avy)))
+   '(flycheck-ocaml merlin-eldoc merlin-mode utop dune tuareg naysayer-theme gruvbox-theme geiser-chicken geiser-chibi caml caml-mode ocaml-mode paredit-mode paredit parinfer-mode parinfer inf-clojure inf-clojure-mode cider cider-mode clojure-mode haskell-mode yasnippet vertico use-package transpose-frame sly-quicklisp rust-mode rmsbolt rainbow-mode rainbow-delimiters racket-mode pdf-tools org-bullets meson-mode makefile-executor magit lsp-ui js2-mode jazz-theme highlight-indent-guides geiser-guile geiser-gauche geiser-gambit geiser-chez flycheck consult company cherry-blossom-theme avy))
+ '(warning-suppress-log-types '((comp) (comp)))
+ '(warning-suppress-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
