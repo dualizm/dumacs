@@ -27,7 +27,7 @@
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/packages.el")
 
-(load-theme 'naysayer t)
+(load-theme 'majapahit-dark t)
 
 ;;; init.el ends here
 (custom-set-variables
@@ -36,7 +36,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(flycheck-ocaml merlin-eldoc merlin-mode utop dune tuareg naysayer-theme gruvbox-theme geiser-chicken geiser-chibi caml caml-mode ocaml-mode paredit-mode paredit parinfer-mode parinfer inf-clojure inf-clojure-mode cider cider-mode clojure-mode haskell-mode yasnippet vertico use-package transpose-frame sly-quicklisp rust-mode rmsbolt rainbow-mode rainbow-delimiters racket-mode pdf-tools org-bullets meson-mode makefile-executor magit lsp-ui js2-mode jazz-theme highlight-indent-guides geiser-guile geiser-gauche geiser-gambit geiser-chez flycheck consult company cherry-blossom-theme avy))
+   '(majapahit-themes flatui-theme @ twilight-bright-theme flycheck-ocaml merlin-eldoc merlin-mode utop dune tuareg naysayer-theme gruvbox-theme geiser-chicken geiser-chibi caml caml-mode ocaml-mode paredit-mode paredit parinfer-mode parinfer inf-clojure inf-clojure-mode cider cider-mode clojure-mode haskell-mode yasnippet vertico use-package transpose-frame sly-quicklisp rust-mode rmsbolt rainbow-mode rainbow-delimiters racket-mode pdf-tools org-bullets meson-mode makefile-executor magit lsp-ui js2-mode jazz-theme highlight-indent-guides geiser-guile geiser-gauche geiser-gambit geiser-chez flycheck consult company cherry-blossom-theme avy))
  '(warning-suppress-log-types '((comp) (comp)))
  '(warning-suppress-types '((comp))))
 (custom-set-faces

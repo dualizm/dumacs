@@ -132,7 +132,7 @@
 (|> themes
     | cherry-blossom-theme
     | naysayer-theme
-    | jazz-theme)
+    | majapahit-themes)
 
 (|> web
     | js-doc
