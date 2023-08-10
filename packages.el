@@ -1,33 +1,28 @@
 (load "~/.emacs.d/api.el")
 
 (require 'package)
-(setf package-archives
-      '(("melpa-stable" . "https://stable.melpa.org/packages/")
-	("melpa" . "https://melpa.org/packages/")
-        ("elpa" . "https://elpa.gnu.org/packages/")
-        ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+(add-to-list 'package-archives
+	     '(("melpa-stable" . "https://stable.melpa.org/packages/")
+	       ("melpa" . "https://melpa.org/packages/")
+               ("elpa" . "https://elpa.gnu.org/packages/")
+               ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
 
-(dolist (package '(use-package))
-  (unless (package-installed-p package)
-    (package-install package)))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents t)
+  (package-install 'use-package))
+
+(eval-and-compile
+  (require 'use-package))
 
 (eval-and-compile
   (setq use-package-always-ensure t
         use-package-expand-minimally t))
 
-(eval-and-compile
-  (require 'use-package))
-
 (|> auto-complete
     | company
     :init (global-company-mode t)
     (setq company-idle-delay 0))
-
-(|> syntax-checking
-    | flycheck
-    :init
-    (global-flycheck-mode t))
 
 (|> disassembly
     | rmsbolt)
@@ -83,24 +78,11 @@
     :hook ((c-mode . lsp-deferred)
 	   (c++-mode . lsp-deferred)
 	   (rust-mode . lsp-deferred)
+	   (php-mode . lsp-deferred)
 	   (clojure-mode . lsp-deferred))
     :commands (lsp lsp-deferred)
     | lsp-ui
     :commands lsp-ui-mode)
-
-(|> ocaml
-    | tuareg
-    :mode "\\.ocamlinit\\'"
-    | dune
-    | utop
-    :hook (tuareg-mode . utop-minor-mode)
-    | merlin-mode
-    :hook ((tuareg-mode . merlin-mode)
-	   (merlin-mode . company-mode))
-    | merlin-eldoc
-    :hook (tuareg-mode . merlin-eldoc-setup)
-    | flycheck-ocaml
-    :config (flycheck-ocaml-setup))
 
 (|> lisp
     | sly
@@ -110,17 +92,12 @@
     (use-package sly-quicklisp))
 
 (|> scheme
-    | geiser-chez)
-
-(|> racket
-    | racket-mode
-    :hook
-    (racket-mode . racket-xp-mode))
+    | geiser-chez
+    | geiser-guile)
 
 (|> clojure
     | clojure-mode
-    | cider
-    | inf-clojure)
+    | cider)
 
 (|> c/cxx
     | meson-mode
@@ -140,3 +117,6 @@
     | ac-js2
     | web-mode
     | json-mode)
+
+(|> php
+    | php-mode)

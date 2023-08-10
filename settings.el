@@ -1,5 +1,9 @@
 (load "~/.emacs.d/api.el")
 
+;; speed up startup
+(setq gc-cons-percentage 0.6)
+(setq gc-cons-threshold most-positive-fixnum)
+
 ;;; warnings
 (defvar warning-minimum-level :emergency)
 (setf visible-bell 1)
