@@ -1,4 +1,4 @@
-;;; funez.el --- Collection of useful functions
+;;; ez.el --- Collection of useful functions
 
 ;;; Commentary:
 
@@ -33,42 +33,48 @@
 	  (select-window first-win)
 	  (if this-win-2nd (other-window 1)))))))
 
-(defun parse-|> (list)
+(defun ez/parse (list)
   "LIST: contain |."
-  (letrec ((subparse-|>
+  (letrec ((parse
 	    (lambda (result acc list)
 	      (if (null list)
 		  (append result (list acc))
 		(if (eq (car list) '|)
-		    (funcall subparse-|> (append result (list acc)) '() (cdr list))
-		  (funcall subparse-|> result (append acc (list (car list))) (cdr list)))) )))
-    (funcall subparse-|> () () list)))
+		    (funcall parse (append result (list acc)) '() (cdr list))
+		  (funcall parse result (append acc (list (car list))) (cdr list)))))))
+    (funcall parse '() '() list)))
 
-(defmacro |> (name &rest packages)
-  "NAME: is category name.  PACKAGES: is collection of use-packages."
+(defmacro ez/>> (name &rest packages)
+  "NAME: is catoegory name.  PACKAGES: is collection of use-packages."
   (when (or (eql name '|) (listp name))
     (error "Enter the name of the package category!"))
-  (let ((packages (parse-|> (cdr packages))))
-    `(progn
-       ,@(mapcar
-	  #'(lambda (package)
-	      `(use-package ,(car package) ,@(cdr package)))
-	  packages))))
+  (let ((packages (ez/parse (cdr packages))))
+    `((lambda ()
+	 ,@(mapcar
+	    #'(lambda (package)
+		`(use-package ,(car package) ,@(cdr package)))
+	    packages)))))
 
-(defun defont (font)
+(defmacro ez/lsp-mods-transfrom (&rest mods)
+  (let ((mods (ez/parse (cdr mods))))
+    `,@(mapcar
+	#'(lambda (mod)
+	    `(,(car mod) . lsp-deferred)) mods)))
+
+(defun ez/font (font)
   "FONT: selected font."
   (when (find-font (font-spec :name font))
-    (set-face-attribute 'default nil :font font :height 130)))
+    (set-face-attribute 'default nil :font font :height 120)))
 
-(defmacro unless-cond (&rest cases)
+(defmacro ez/unless-map (&rest cases)
   "CASES: list forms."
   `(progn
      ,@(mapcar #'(lambda (case) `(unless ,(car case) ,(cadar case))) cases)))
 
-(defun save-directories (backups saves)
+(defun ez/save-directories (backups saves)
   "BACKUPS: the path to the directory with backups.
 SAVES: the path to the directory with saves."
-  (unless-cond
+  (ez/unless-map
    ((file-directory-p backups) (make-directory backups))
    ((file-directory-p saves) (make-directory saves)))
   (setq backup-directory-alist
