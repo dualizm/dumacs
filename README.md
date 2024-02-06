@@ -1,10 +1,10 @@
-# ezmacs ☥
+# dumacs ☥
 
-<p align="center"><img src="img/ezmacs.svg" alt="ezmacs"/></p>
+<p align="center"><img src="img/dumacs.svg" alt="dumacs"/></p>
 
 **Quick Start**
 
 * How to install
 ```sh
-git clone https://github.com/cloezure/ezmacs.git ~/.emacs.d
+git clone https://github.com/dualizm/dumacs.git ~/.emacs.d
 ```

@@ -1,32 +1,21 @@
-;;; init.el --- Initialization file for ezmacs
+;;; init.el --- Initialization file for dumacs
 
-;;; Commentary:
-
-;; ezmacs startup file --- Initialization for ezmacs
-
-;;; Code:
-
-;;; ABOUT EZMACS
-
-(defvar ezmacs-info
+(defvar dumacs-info
   '((file         . "init.el")
-    (authors      . "ezeire")
+    (authors      . "dualizm")
     (version      . "0.0.4")
     (email        . "ognieff@yandex.ru")
-    (url          . "https://github.com/cloezure/ezmacs")
-    (project-name . "ezmacs")
+    (url          . "https://github.com/dualizm/dumacs")
+    (project-name . "dumacs")
     (date-start   . "29-09-22")
     (brief        . "config for author"))
-  "Contain information about the ezmacs build.")
+  "Contain information about the dumacs build.")
 
-(defun ezmacs-about (key)
-  "KEY: value from ezmacs-info."
-  (message (cdr (assoc key ezmacs-info))))
+(defun dumacs-about (key)
+  (message (cdr (assoc key dumacs-info))))
 
-(load "~/.emacs.d/ez.el")
+(load "~/.emacs.d/api.el")
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/packages.el")
 
 (load-theme 'kaolin-ocean t)
-
-;;; init.el ends here

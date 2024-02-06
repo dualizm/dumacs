@@ -1,4 +1,4 @@
-(load "~/.emacs.d/ez.el")
+(load "~/.emacs.d/api.el")
 
 (require 'package)
 (setf package-archives
@@ -19,32 +19,32 @@
   (setq use-package-always-ensure t
         use-package-expand-minimally t))
 
-(ez/>> auto-complete
+(~> auto-complete
        | company
        :init (global-company-mode t)
        (setq company-idle-delay 0))
 
-(ez/>> highlight-indent-guides
+(~> highlight-indent-guides
        | highlight-indent-guides
        :config
        (setq highlight-indent-guides-method 'bitmap)
        :hook (prog-mode . highlight-indent-guides-mode))
 
-(ez/>> git
+(~> git
        | magit)
 
-(ez/>> completion
+(~> completion
        | vertico
        :init (vertico-mode))
 
-(ez/>> motion
+(~> motion
        | avy
        :bind (("C-:" . 'avy-goto-char)
 	      ("C-'" . 'avy-goto-char-2)
 	      ("M-g l" . 'avy-goto-line)
 	      ("M-g f" . 'avy-goto-word-1)))
 
-(ez/>> helping
+(~> helping
        | rainbow-mode
        :hook (prog-mode . rainbow-mode)
        | rainbow-delimiters
@@ -52,22 +52,20 @@
        | paredit
        :hook (prog-mode . paredit-mode))
 
-(ez/>> lsp
+(~> lsp
        | lsp-mode
        :hook (ez/lsp-mods-transfrom
-	      | c-mode
-	      | rust-mode
-	      | erlang-mode)
+	      | c-mode)
        :commands (lsp lsp-deferred)
        | lsp-ui
        :commands lsp-ui-mode)
 
-(ez/>> lisp
+(~> lisp
        | sly
        :init
        (setq inferior-lisp-program "sbcl"))
 
-(ez/>> themes
+(~> themes
        | kaolin-themes
        | cherry-blossom-theme
        | naysayer-theme
