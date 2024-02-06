@@ -54,7 +54,7 @@
 
 (~> lsp
        | lsp-mode
-       :hook (ez/lsp-mods-transfrom
+       :hook (api/lsp-mods-transfrom
 	      | c-mode)
        :commands (lsp lsp-deferred)
        | lsp-ui
