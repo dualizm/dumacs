@@ -1,0 +1,6 @@
+((author . dualizm)
+ (version . "1.0.0")
+ (email . "ognieff@gmail.com")
+ (url . "https://github.com/dualizm/dumacs")
+ (date-start . "29-09-22")
+ (brief . "A simple configuration for me."))

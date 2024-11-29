@@ -42,3 +42,16 @@
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
 			 '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
 
+(defun du/remove-tabs ()
+  (interactive)
+  (set-variable 'tab-width 2)
+  (mark-whole-buffer)
+  (untabify (region-beginning) (region-end))
+  (keyboard-quit))
+
+(defun du/toggle-comment-on-line ()
+  "comment or uncomment line"
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
+
