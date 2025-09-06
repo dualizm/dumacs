@@ -1,5 +1,7 @@
-;; du-bind.el
-(load "du.el")
+;; du-bind.el --- configuration of bindings
+(load "du-lib.el")
 
-;; toggle comments
+;; переключение комментариев
 (global-set-key (kbd "C-;") 'du/toggle-comment-on-line)
+
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
