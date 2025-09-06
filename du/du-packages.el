@@ -45,8 +45,14 @@
   (treemacs-filewatch-mode t))
 
 (use-package treemacs-projectile
-  :after treemacs projectile
-  :ensure t)
+  :after treemacs projectile)
+
+;; снипеты
+(use-package yasnippet
+  :config
+  (push "~/.emacs.d/snippets/" yas/snippet-dirs)
+  (yas/global-mode t)
+  (add-to-list 'auto-mode-alist '("/snippets/" . snippet-mode)))
 
 ;; git
 ;; (use-package magit
