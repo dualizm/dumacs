@@ -29,7 +29,23 @@
               '("package-lock.json" "yarn.lock" "*.min.js" "*.bundle.js")))
 
 ;; Дополнительные настройки для JS режима
-(setq js-indent-level 2)
-(setq typescript-indent-level 2)
+(setf major-mode-remap-alist
+      '((js-mode . js-ts-mode)
+        (js2-mode . js-ts-mode)))
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
+;; Для JavaScript/JSX файлов
+(add-hook 'js-ts-mode-hook (lambda ()
+  (setf indent-tabs-mode nil
+        tab-width 2
+        js-indent-level 2)))
+
+(add-hook 'tsx-ts-mode-hook (lambda ()
+  (setf indent-tabs-mode nil
+        tab-width 2
+        jsx-indent-level 2)))
+
 
 (provide 'du-js)

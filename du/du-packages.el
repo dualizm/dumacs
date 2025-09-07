@@ -3,7 +3,7 @@
 (require 'package)
 (setf package-archives
       '(("melpa-stable" . "https://stable.melpa.org/packages/")
-	("melpa" . "https://melpa.org/packages/")
+	      ("melpa" . "https://melpa.org/packages/")
         ("elpa" . "https://elpa.gnu.org/packages/")
         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
@@ -30,6 +30,14 @@
 
 (use-package vertico
   :config (vertico-mode))
+
+(use-package rainbow-mode
+  :config
+  (setf rainbow-html-colors t
+        rainbow-x-colors t
+        rainbow-hex-colors t
+        rainbow-rgb-colors t
+        rainbow-color-names t))
 
 ;; lsp
 (use-package lsp-mode
@@ -92,21 +100,6 @@
 
 (use-package eslintd-fix
   :hook ((js-mode ts-mode jsx-mode typescript-mode) . eslintd-fix-mode))
-
-(use-package js-ts-mode
-  :mode ("\\.js\\'" "\\.mjs\\'")
-  :config
-  (setf js-ts-mode-indent-offset 2))
-
-(use-package typescript-ts-mode
-  :mode ("\\.ts\\'" "\\.mts\\'")
-  :config
-  (setf typescript-ts-mode-indent-offset 2))
-
-(use-package tsx-ts-mode
-  :mode ("\\.tsx\\'" "\\.jsx\\'")
-  :config
-  (setf tsx-ts-mode-indent-offset 2))
 
 ;; LSP интеграция
 (add-hook 'js-ts-mode-hook #'lsp)

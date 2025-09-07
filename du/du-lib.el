@@ -25,7 +25,7 @@
 (defun du/select-font (font)
   "Устанавливает шрифт для Emacs."
   (if (find-font (font-spec :name font))
-      (set-face-attribute 'default nil :font font :height 120)
+      (set-face-attribute 'default nil :font font :height 130)
     (error (format "Font not found: [%s]" font))))
 
 (defmacro du/unless-cases (&rest cases)

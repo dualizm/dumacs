@@ -2,4 +2,4 @@
 # key: log
 # name: console.log
 # --
-console.log($0);
+console.log(${1:"debug:"}, $0);

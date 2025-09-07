@@ -11,3 +11,8 @@
      (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
      (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+
+(setf major-mode-remap-alist
+      '((js-mode . js-ts-mode)
+	(js-jsx-mode . tsx-ts-mode)
+	(typescript-mode . typescript-ts-mode)))
