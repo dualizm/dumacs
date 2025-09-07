@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: use-st
+# name: React useState
+# --
+const [is${1:Name}, set$1] = useState(${2:initial});

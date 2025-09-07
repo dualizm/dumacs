@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: fune
+# name: Function expression
+# --
+function(${1:params}) {
+  $0
+};

@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# key: comp
+# name: React component
+# --
+import st from "${1:Name}.module.css";
+
+const $1 = (${2:props}) => {
+  $0
+  return (
+    <div></div>
+  );
+};
+
+export default $1;

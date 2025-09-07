@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: fin
+# name: fin
+# --
+for(const ${1:item} in ${2:object}) {
+  $0
+}

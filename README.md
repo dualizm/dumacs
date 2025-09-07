@@ -2,6 +2,9 @@
 
 <p align="center"><img src="img/dumacs.svg" alt="dumacs"/></p>
 
+**Require**
+emacs: 30+
+
 **Quick Start**
 
 * How to install

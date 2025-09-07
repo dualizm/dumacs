@@ -22,10 +22,30 @@
 ;; редактирование текста
 (use-package company
   :hook (prog-mode text-mode)
-  :config (setq company-idle-delay 0))
+  :config (setf company-idle-delay 0.3
+		company-minimum-prefix-length 2))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 
 (use-package vertico
   :config (vertico-mode))
+
+;; lsp
+(use-package lsp-mode
+  :commands lsp
+  :init (setf lsp-keymap-prefix "C-c l")
+  :config
+  (setf lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+  (lsp-enable-which-key-integration t))
+
+(use-package lsp-ui
+  :after lsp-mode
+  :commands lsp-ui-mode
+  :config
+  (setf lsp-ui-peek-always-show t
+        lsp-ui-sideline-show-hover t
+        lsp-ui-doc-enable t))
 
 ;; проекты
 (use-package projectile
@@ -55,8 +75,45 @@
   (add-to-list 'auto-mode-alist '("/snippets/" . snippet-mode)))
 
 ;; git
-;; (use-package magit
+(use-package magit
+  :commands magit-status)
+
+(use-package diff-hl
+  :hook ((prog-mode . diff-hl-mode)
+         (magit-post-refresh . diff-hl-magit-post-refresh)))
 
 ;; common-lisp
 (use-package sly
   :config (setq inferior-lisp-program "sbcl"))
+
+;; javascript
+(use-package prettier-js
+  :hook ((js-mode ts-mode jsx-mode typescript-mode) . prettier-js-mode))
+
+(use-package eslintd-fix
+  :hook ((js-mode ts-mode jsx-mode typescript-mode) . eslintd-fix-mode))
+
+(use-package js-ts-mode
+  :mode ("\\.js\\'" "\\.mjs\\'")
+  :config
+  (setf js-ts-mode-indent-offset 2))
+
+(use-package typescript-ts-mode
+  :mode ("\\.ts\\'" "\\.mts\\'")
+  :config
+  (setf typescript-ts-mode-indent-offset 2))
+
+(use-package tsx-ts-mode
+  :mode ("\\.tsx\\'" "\\.jsx\\'")
+  :config
+  (setf tsx-ts-mode-indent-offset 2))
+
+;; LSP интеграция
+(add-hook 'js-ts-mode-hook #'lsp)
+(add-hook 'typescript-ts-mode-hook #'lsp)
+(add-hook 'tsx-ts-mode-hook #'lsp)
+
+;; Форматирование
+(add-hook 'js-ts-mode-hook #'prettier-js-mode)
+(add-hook 'typescript-ts-mode-hook #'prettier-js-mode)
+(add-hook 'tsx-ts-mode-hook #'prettier-js-mode)

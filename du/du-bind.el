@@ -1,4 +1,4 @@
-;; du-bind.el --- configuration of bindings
+;; du-bind.el --- конфигурация биндингов
 (load "du-lib.el")
 
 ;; переключение комментариев

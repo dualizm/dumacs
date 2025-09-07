@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: funa
+# name: Arrow function expression
+# --
+(${1:params}) => {
+  $0
+};

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: if
-#name : if
+# name: if
 # --
 if (${1:condition}) {
   $0

@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: tsuite
-# name: normal test suite
-# --
-BOOST_AUTO_TEST_SUITE(${1:name})
-
-$0
-
-BOOST_AUTO_TEST_SUITE_END()

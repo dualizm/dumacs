@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: const
+# name: const
+# --
+const ${1:name} = ${2:expr}

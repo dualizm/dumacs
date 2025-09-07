@@ -1,8 +1,8 @@
-;;; du-settings.el --- dumacs settings
+;;; du-settings.el --- dumacs настройки
 
 (load "du-lib.el")
 
-;; warnings
+;; предупреждения
 (defvar warning-minimum-level :emergency)
 (setf byte-compile-warnings '(not docstring)
       visible-bell 'ignore
@@ -11,7 +11,7 @@
 ;; yes/no -> y/n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; save files
+;; директории для сохранения
 (du/save-directories
  "~/.emacs.d/.backups/"
  "~/.emacs.d/.auto-saves/")
@@ -25,22 +25,22 @@
   (menu-bar-mode -1))
 (blink-cursor-mode -1)
 
-;; initial frame
+;; начальный frame
 (add-to-list 'default-frame-alist '(height . 45))
 (add-to-list 'default-frame-alist '(width . 100))
 
-;; font
+;; шрифт
 (du/select-font
  "-JB-JetBrains Mono-normal-normal-normal-*-19-*-*-*-m-0-iso10646-1")
 
-;; startup
+;; запуск
 (setf inhibit-startup-screen t
       inhibit-startup-message t)
 
-;; show full path in title bar
+;; показывает путь в заголовке фрейма
 (setq-default frame-title-format "%b (%f)")
 
-;; transparency
+;; прозрачность
 ;;(set-frame-parameter (selected-frame) 'alpha '(95 . 50))
 ;;(add-to-list 'default-frame-alist '(alpha . (95 . 50)))
 

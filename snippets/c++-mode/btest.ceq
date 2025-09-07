@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: eq
-# name: BOOST_CHECK_EQUAL
-# --
-BOOST_CHECK_EQUAL(${1:left}, $0);
