@@ -70,7 +70,8 @@
 (use-package treemacs
   :config
   (treemacs-follow-mode t)
-  (treemacs-filewatch-mode t))
+  (treemacs-filewatch-mode t)
+  (global-set-key (kbd "C-c t") 'treemacs-select-window))
 
 (use-package treemacs-projectile
   :after treemacs projectile)
