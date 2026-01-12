@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# key: doc-slot
+# name: doc-slot
+# --
+;; :: SLOT.BRIEF ::
+;; $1
+;; :: SLOT.TYPE ::
+;; $2
+;; :: SLOT.REQUIRED ::
+;; $3

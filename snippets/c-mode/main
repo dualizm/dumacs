@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# key: main
+# name: main
+# --
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  $0
+  return EXIT_SUCCESS;
+}

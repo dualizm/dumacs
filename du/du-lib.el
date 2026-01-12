@@ -1,4 +1,4 @@
-;;; du-lib.el --- Коллекция полезных функций
+;;;; du-lib.el --- Коллекция полезных функций
 
 (defun du/transform-vertical-lines (list)
   "Трансформирует '(aboba | biba 2 | jokerge) в ((aboba) (biba 2) (jokerge))."
@@ -61,6 +61,10 @@
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
 
+(defun du/remove-last-char (string)
+  "Возвращает новую строку с удалённым последним символов в STRING."
+  (substring string 0 -1))
+
 (defun du/disable-display-line-numbers-mode ()
   "Выключает отображение чисел в строках."
   (display-line-numbers-mode 0))
@@ -110,4 +114,74 @@
 	      (read-string "Git url: ") dir))
       ("empty" (du/create-and-setup-project dir "echo 'Проект создан'"))
       (_ (error "Неизвестный тип проекта.")))))
+
+(defun du/delete-inside-quotes (&optional keep-quotes)
+  "Удаляет текст внутри кавычек, где находится курсор.
+Если KEEP-QUOTES не nil, оставляет кавычки на месте.
+Поддерживает экранированные кавычки (\\\", \\')."
+  (interactive "P")
+  (let ((quotes '("\"" "'" "`" "“" "‘"))
+        (max-look-back 1000)
+        start end quote-char open-pos close-pos)
+    
+    (save-excursion
+      (save-restriction
+        (widen)
+        (setq start (point))
+        
+        ;; Функция для поиска кавычки с учетом экранирования
+        (defun find-quote-backward (quote)
+          (let ((found nil)
+                (search-limit (max (point-min) (- (point) max-look-back))))
+            (while (and (not found) 
+                       (re-search-backward (regexp-quote quote) 
+                                          search-limit t))
+              ;; Проверяем, не экранирована ли кавычка
+              (let ((prev-char (char-before (point))))
+                (unless (eq prev-char ?\\)
+                  (setq found (point)))))
+            found))
+        
+        ;; Ищем открывающую кавычку
+        (setq open-pos nil)
+        (dolist (q quotes)
+          (let ((pos (find-quote-backward q)))
+            (when (and pos (or (null open-pos) (> pos open-pos)))
+              (setq open-pos pos)
+              (setq quote-char q))))
+        
+        (when open-pos
+          (goto-char open-pos)
+          (forward-char (length quote-char))
+          
+          ;; Ищем закрывающую кавычку
+          (defun find-quote-forward (quote)
+            (let ((found nil)
+                  (search-limit (min (point-max) (+ (point) max-look-back))))
+              (while (and (not found)
+                         (re-search-forward (regexp-quote quote) 
+                                           search-limit t))
+                ;; Проверяем, не экранирована ли кавычка
+                (save-excursion
+                  (backward-char (length quote))
+                  (let ((prev-char (char-before (point))))
+                    (unless (eq prev-char ?\\)
+                      (setq found (point))))))
+              found))
+          
+          (setq close-pos (find-quote-forward quote-char))
+          
+          (when (and close-pos (> start open-pos) (< start close-pos))
+            ;; Удаляем
+            (if keep-quotes
+                ;; Оставляем кавычки
+                (delete-region (1+ open-pos) (1- close-pos))
+              ;; Удаляем вместе с кавычками
+              (delete-region open-pos close-pos))
+            
+            (goto-char open-pos)
+            (unless keep-quotes
+              (insert quote-char))
+            (message "Текст %s кавычек удален" 
+                     (if keep-quotes "внутри" "вместе с"))))))))
   

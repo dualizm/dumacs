@@ -1,4 +1,4 @@
-;;; du-js.el --- javascript/node.js конфигурация
+;;;; du-js.el --- javascript/node.js функции для работы
 
 (setf projectile-project-compilation-cmd
       #'(lambda ()

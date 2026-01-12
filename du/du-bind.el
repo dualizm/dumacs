@@ -1,7 +1,14 @@
-;; du-bind.el --- конфигурация биндингов
+;;;; du-bind.el --- конфигурация биндингов
 (load "du-lib.el")
 
 ;; переключение комментариев
 (global-set-key (kbd "C-;") 'du/toggle-comment-on-line)
 
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;;(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+
+;;; sly-mode
+(with-eval-after-load 'sly
+  ;; set package
+  (define-key sly-prefix-map (kbd "p") 'sly-mrepl-set-package))
+
